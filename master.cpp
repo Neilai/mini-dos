@@ -51,7 +51,6 @@ int main(int argc, char *argv[])
       break;
     }
 
-    printf("epoll_events_count = %d\n,map size:%d \n", epoll_events_count,socketMap.size());
     //处理这epoll_events_count个就绪事件
     for (int i = 0; i < epoll_events_count; ++i)
     {
@@ -96,6 +95,7 @@ int main(int argc, char *argv[])
         }
       }
     }
+    printf("epoll_events_count = %d\n,map size:%d \n", epoll_events_count,socketMap.size());
   }
   return 0;
 }
