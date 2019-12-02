@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
         }
       }
     }
-    printf("epoll_events_count = %d\n,map size:%d \n", epoll_events_count,socketMap.size());
+    printf("epoll_events_count = %d\nmap size:%d \n", epoll_events_count,socketMap.size());
   }
   return 0;
 }
