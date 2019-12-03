@@ -55,7 +55,7 @@ struct TableStruct_mini_5fdos_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mini_5fdos_2eproto;
-namespace tutorial {
+namespace dos {
 class Operation;
 class OperationDefaultTypeInternal;
 extern OperationDefaultTypeInternal _Operation_default_instance_;
@@ -65,13 +65,13 @@ extern Operation_DistributeTaskDefaultTypeInternal _Operation_DistributeTask_def
 class Operation_Result;
 class Operation_ResultDefaultTypeInternal;
 extern Operation_ResultDefaultTypeInternal _Operation_Result_default_instance_;
-}  // namespace tutorial
+}  // namespace dos
 PROTOBUF_NAMESPACE_OPEN
-template<> ::tutorial::Operation* Arena::CreateMaybeMessage<::tutorial::Operation>(Arena*);
-template<> ::tutorial::Operation_DistributeTask* Arena::CreateMaybeMessage<::tutorial::Operation_DistributeTask>(Arena*);
-template<> ::tutorial::Operation_Result* Arena::CreateMaybeMessage<::tutorial::Operation_Result>(Arena*);
+template<> ::dos::Operation* Arena::CreateMaybeMessage<::dos::Operation>(Arena*);
+template<> ::dos::Operation_DistributeTask* Arena::CreateMaybeMessage<::dos::Operation_DistributeTask>(Arena*);
+template<> ::dos::Operation_Result* Arena::CreateMaybeMessage<::dos::Operation_Result>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace tutorial {
+namespace dos {
 
 enum Operation_OperationType : int {
   Operation_OperationType_REGISTER = 0,
@@ -102,7 +102,7 @@ inline bool Operation_OperationType_Parse(
 // ===================================================================
 
 class Operation_DistributeTask :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:tutorial.Operation.DistributeTask) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dos.Operation.DistributeTask) */ {
  public:
   Operation_DistributeTask();
   virtual ~Operation_DistributeTask();
@@ -189,7 +189,7 @@ class Operation_DistributeTask :
   void InternalSwap(Operation_DistributeTask* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "tutorial.Operation.DistributeTask";
+    return "dos.Operation.DistributeTask";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -299,7 +299,7 @@ class Operation_DistributeTask :
   std::string* _internal_mutable_operation_label();
   public:
 
-  // @@protoc_insertion_point(class_scope:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(class_scope:dos.Operation.DistributeTask)
  private:
   class _Internal;
 
@@ -318,7 +318,7 @@ class Operation_DistributeTask :
 // -------------------------------------------------------------------
 
 class Operation_Result :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:tutorial.Operation.Result) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dos.Operation.Result) */ {
  public:
   Operation_Result();
   virtual ~Operation_Result();
@@ -405,7 +405,7 @@ class Operation_Result :
   void InternalSwap(Operation_Result* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "tutorial.Operation.Result";
+    return "dos.Operation.Result";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -473,7 +473,7 @@ class Operation_Result :
   std::string* _internal_mutable_result_value();
   public:
 
-  // @@protoc_insertion_point(class_scope:tutorial.Operation.Result)
+  // @@protoc_insertion_point(class_scope:dos.Operation.Result)
  private:
   class _Internal;
 
@@ -490,7 +490,7 @@ class Operation_Result :
 // -------------------------------------------------------------------
 
 class Operation :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:tutorial.Operation) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dos.Operation) */ {
  public:
   Operation();
   virtual ~Operation();
@@ -577,7 +577,7 @@ class Operation :
   void InternalSwap(Operation* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "tutorial.Operation";
+    return "dos.Operation";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -641,60 +641,58 @@ class Operation :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTaskFieldNumber = 4,
-    kResultFieldNumber = 5,
+    kTaskFieldNumber = 3,
+    kResultFieldNumber = 4,
     kOperationFieldNumber = 1,
     kPortFieldNumber = 2,
-    kQueryFieldNumber = 3,
-    kTaskFinishedFieldNumber = 6,
   };
-  // repeated .tutorial.Operation.DistributeTask task = 4;
+  // repeated .dos.Operation.DistributeTask task = 3;
   int task_size() const;
   private:
   int _internal_task_size() const;
   public:
   void clear_task();
-  ::tutorial::Operation_DistributeTask* mutable_task(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_DistributeTask >*
+  ::dos::Operation_DistributeTask* mutable_task(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >*
       mutable_task();
   private:
-  const ::tutorial::Operation_DistributeTask& _internal_task(int index) const;
-  ::tutorial::Operation_DistributeTask* _internal_add_task();
+  const ::dos::Operation_DistributeTask& _internal_task(int index) const;
+  ::dos::Operation_DistributeTask* _internal_add_task();
   public:
-  const ::tutorial::Operation_DistributeTask& task(int index) const;
-  ::tutorial::Operation_DistributeTask* add_task();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_DistributeTask >&
+  const ::dos::Operation_DistributeTask& task(int index) const;
+  ::dos::Operation_DistributeTask* add_task();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >&
       task() const;
 
-  // repeated .tutorial.Operation.Result result = 5;
+  // repeated .dos.Operation.Result result = 4;
   int result_size() const;
   private:
   int _internal_result_size() const;
   public:
   void clear_result();
-  ::tutorial::Operation_Result* mutable_result(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_Result >*
+  ::dos::Operation_Result* mutable_result(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >*
       mutable_result();
   private:
-  const ::tutorial::Operation_Result& _internal_result(int index) const;
-  ::tutorial::Operation_Result* _internal_add_result();
+  const ::dos::Operation_Result& _internal_result(int index) const;
+  ::dos::Operation_Result* _internal_add_result();
   public:
-  const ::tutorial::Operation_Result& result(int index) const;
-  ::tutorial::Operation_Result* add_result();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_Result >&
+  const ::dos::Operation_Result& result(int index) const;
+  ::dos::Operation_Result* add_result();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >&
       result() const;
 
-  // required .tutorial.Operation.OperationType operation = 1;
+  // required .dos.Operation.OperationType operation = 1;
   bool has_operation() const;
   private:
   bool _internal_has_operation() const;
   public:
   void clear_operation();
-  ::tutorial::Operation_OperationType operation() const;
-  void set_operation(::tutorial::Operation_OperationType value);
+  ::dos::Operation_OperationType operation() const;
+  void set_operation(::dos::Operation_OperationType value);
   private:
-  ::tutorial::Operation_OperationType _internal_operation() const;
-  void _internal_set_operation(::tutorial::Operation_OperationType value);
+  ::dos::Operation_OperationType _internal_operation() const;
+  void _internal_set_operation(::dos::Operation_OperationType value);
   public:
 
   // optional uint32 port = 2 [default = 0];
@@ -710,45 +708,17 @@ class Operation :
   void _internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional bool query = 3 [default = false];
-  bool has_query() const;
-  private:
-  bool _internal_has_query() const;
-  public:
-  void clear_query();
-  bool query() const;
-  void set_query(bool value);
-  private:
-  bool _internal_query() const;
-  void _internal_set_query(bool value);
-  public:
-
-  // optional bool task_finished = 6 [default = false];
-  bool has_task_finished() const;
-  private:
-  bool _internal_has_task_finished() const;
-  public:
-  void clear_task_finished();
-  bool task_finished() const;
-  void set_task_finished(bool value);
-  private:
-  bool _internal_task_finished() const;
-  void _internal_set_task_finished(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:tutorial.Operation)
+  // @@protoc_insertion_point(class_scope:dos.Operation)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_DistributeTask > task_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_Result > result_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask > task_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result > result_;
   int operation_;
   ::PROTOBUF_NAMESPACE_ID::uint32 port_;
-  bool query_;
-  bool task_finished_;
   friend struct ::TableStruct_mini_5fdos_2eproto;
 };
 // ===================================================================
@@ -775,15 +745,15 @@ inline void Operation_DistributeTask::clear_operation_num_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& Operation_DistributeTask::operation_num_type() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_get:dos.Operation.DistributeTask.operation_num_type)
   return _internal_operation_num_type();
 }
 inline void Operation_DistributeTask::set_operation_num_type(const std::string& value) {
   _internal_set_operation_num_type(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_set:dos.Operation.DistributeTask.operation_num_type)
 }
 inline std::string* Operation_DistributeTask::mutable_operation_num_type() {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_mutable:dos.Operation.DistributeTask.operation_num_type)
   return _internal_mutable_operation_num_type();
 }
 inline const std::string& Operation_DistributeTask::_internal_operation_num_type() const {
@@ -797,26 +767,26 @@ inline void Operation_DistributeTask::set_operation_num_type(std::string&& value
   _has_bits_[0] |= 0x00000001u;
   operation_num_type_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_set_rvalue:dos.Operation.DistributeTask.operation_num_type)
 }
 inline void Operation_DistributeTask::set_operation_num_type(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _has_bits_[0] |= 0x00000001u;
   operation_num_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_set_char:dos.Operation.DistributeTask.operation_num_type)
 }
 inline void Operation_DistributeTask::set_operation_num_type(const char* value, size_t size) {
   _has_bits_[0] |= 0x00000001u;
   operation_num_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_set_pointer:dos.Operation.DistributeTask.operation_num_type)
 }
 inline std::string* Operation_DistributeTask::_internal_mutable_operation_num_type() {
   _has_bits_[0] |= 0x00000001u;
   return operation_num_type_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Operation_DistributeTask::release_operation_num_type() {
-  // @@protoc_insertion_point(field_release:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_release:dos.Operation.DistributeTask.operation_num_type)
   if (!_internal_has_operation_num_type()) {
     return nullptr;
   }
@@ -830,7 +800,7 @@ inline void Operation_DistributeTask::set_allocated_operation_num_type(std::stri
     _has_bits_[0] &= ~0x00000001u;
   }
   operation_num_type_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operation_num_type);
-  // @@protoc_insertion_point(field_set_allocated:tutorial.Operation.DistributeTask.operation_num_type)
+  // @@protoc_insertion_point(field_set_allocated:dos.Operation.DistributeTask.operation_num_type)
 }
 
 // required string operation_num_one = 2;
@@ -846,15 +816,15 @@ inline void Operation_DistributeTask::clear_operation_num_one() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline const std::string& Operation_DistributeTask::operation_num_one() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_get:dos.Operation.DistributeTask.operation_num_one)
   return _internal_operation_num_one();
 }
 inline void Operation_DistributeTask::set_operation_num_one(const std::string& value) {
   _internal_set_operation_num_one(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_set:dos.Operation.DistributeTask.operation_num_one)
 }
 inline std::string* Operation_DistributeTask::mutable_operation_num_one() {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_mutable:dos.Operation.DistributeTask.operation_num_one)
   return _internal_mutable_operation_num_one();
 }
 inline const std::string& Operation_DistributeTask::_internal_operation_num_one() const {
@@ -868,26 +838,26 @@ inline void Operation_DistributeTask::set_operation_num_one(std::string&& value)
   _has_bits_[0] |= 0x00000002u;
   operation_num_one_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_set_rvalue:dos.Operation.DistributeTask.operation_num_one)
 }
 inline void Operation_DistributeTask::set_operation_num_one(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _has_bits_[0] |= 0x00000002u;
   operation_num_one_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_set_char:dos.Operation.DistributeTask.operation_num_one)
 }
 inline void Operation_DistributeTask::set_operation_num_one(const char* value, size_t size) {
   _has_bits_[0] |= 0x00000002u;
   operation_num_one_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_set_pointer:dos.Operation.DistributeTask.operation_num_one)
 }
 inline std::string* Operation_DistributeTask::_internal_mutable_operation_num_one() {
   _has_bits_[0] |= 0x00000002u;
   return operation_num_one_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Operation_DistributeTask::release_operation_num_one() {
-  // @@protoc_insertion_point(field_release:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_release:dos.Operation.DistributeTask.operation_num_one)
   if (!_internal_has_operation_num_one()) {
     return nullptr;
   }
@@ -901,7 +871,7 @@ inline void Operation_DistributeTask::set_allocated_operation_num_one(std::strin
     _has_bits_[0] &= ~0x00000002u;
   }
   operation_num_one_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operation_num_one);
-  // @@protoc_insertion_point(field_set_allocated:tutorial.Operation.DistributeTask.operation_num_one)
+  // @@protoc_insertion_point(field_set_allocated:dos.Operation.DistributeTask.operation_num_one)
 }
 
 // required string operation_num_two = 3;
@@ -917,15 +887,15 @@ inline void Operation_DistributeTask::clear_operation_num_two() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline const std::string& Operation_DistributeTask::operation_num_two() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_get:dos.Operation.DistributeTask.operation_num_two)
   return _internal_operation_num_two();
 }
 inline void Operation_DistributeTask::set_operation_num_two(const std::string& value) {
   _internal_set_operation_num_two(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_set:dos.Operation.DistributeTask.operation_num_two)
 }
 inline std::string* Operation_DistributeTask::mutable_operation_num_two() {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_mutable:dos.Operation.DistributeTask.operation_num_two)
   return _internal_mutable_operation_num_two();
 }
 inline const std::string& Operation_DistributeTask::_internal_operation_num_two() const {
@@ -939,26 +909,26 @@ inline void Operation_DistributeTask::set_operation_num_two(std::string&& value)
   _has_bits_[0] |= 0x00000004u;
   operation_num_two_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_set_rvalue:dos.Operation.DistributeTask.operation_num_two)
 }
 inline void Operation_DistributeTask::set_operation_num_two(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _has_bits_[0] |= 0x00000004u;
   operation_num_two_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_set_char:dos.Operation.DistributeTask.operation_num_two)
 }
 inline void Operation_DistributeTask::set_operation_num_two(const char* value, size_t size) {
   _has_bits_[0] |= 0x00000004u;
   operation_num_two_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_set_pointer:dos.Operation.DistributeTask.operation_num_two)
 }
 inline std::string* Operation_DistributeTask::_internal_mutable_operation_num_two() {
   _has_bits_[0] |= 0x00000004u;
   return operation_num_two_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Operation_DistributeTask::release_operation_num_two() {
-  // @@protoc_insertion_point(field_release:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_release:dos.Operation.DistributeTask.operation_num_two)
   if (!_internal_has_operation_num_two()) {
     return nullptr;
   }
@@ -972,7 +942,7 @@ inline void Operation_DistributeTask::set_allocated_operation_num_two(std::strin
     _has_bits_[0] &= ~0x00000004u;
   }
   operation_num_two_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operation_num_two);
-  // @@protoc_insertion_point(field_set_allocated:tutorial.Operation.DistributeTask.operation_num_two)
+  // @@protoc_insertion_point(field_set_allocated:dos.Operation.DistributeTask.operation_num_two)
 }
 
 // required string operation_label = 4;
@@ -988,15 +958,15 @@ inline void Operation_DistributeTask::clear_operation_label() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline const std::string& Operation_DistributeTask::operation_label() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_get:dos.Operation.DistributeTask.operation_label)
   return _internal_operation_label();
 }
 inline void Operation_DistributeTask::set_operation_label(const std::string& value) {
   _internal_set_operation_label(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_set:dos.Operation.DistributeTask.operation_label)
 }
 inline std::string* Operation_DistributeTask::mutable_operation_label() {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_mutable:dos.Operation.DistributeTask.operation_label)
   return _internal_mutable_operation_label();
 }
 inline const std::string& Operation_DistributeTask::_internal_operation_label() const {
@@ -1010,26 +980,26 @@ inline void Operation_DistributeTask::set_operation_label(std::string&& value) {
   _has_bits_[0] |= 0x00000008u;
   operation_label_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_set_rvalue:dos.Operation.DistributeTask.operation_label)
 }
 inline void Operation_DistributeTask::set_operation_label(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _has_bits_[0] |= 0x00000008u;
   operation_label_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_set_char:dos.Operation.DistributeTask.operation_label)
 }
 inline void Operation_DistributeTask::set_operation_label(const char* value, size_t size) {
   _has_bits_[0] |= 0x00000008u;
   operation_label_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_set_pointer:dos.Operation.DistributeTask.operation_label)
 }
 inline std::string* Operation_DistributeTask::_internal_mutable_operation_label() {
   _has_bits_[0] |= 0x00000008u;
   return operation_label_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Operation_DistributeTask::release_operation_label() {
-  // @@protoc_insertion_point(field_release:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_release:dos.Operation.DistributeTask.operation_label)
   if (!_internal_has_operation_label()) {
     return nullptr;
   }
@@ -1043,7 +1013,7 @@ inline void Operation_DistributeTask::set_allocated_operation_label(std::string*
     _has_bits_[0] &= ~0x00000008u;
   }
   operation_label_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operation_label);
-  // @@protoc_insertion_point(field_set_allocated:tutorial.Operation.DistributeTask.operation_label)
+  // @@protoc_insertion_point(field_set_allocated:dos.Operation.DistributeTask.operation_label)
 }
 
 // -------------------------------------------------------------------
@@ -1063,15 +1033,15 @@ inline void Operation_Result::clear_result_type() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& Operation_Result::result_type() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_get:dos.Operation.Result.result_type)
   return _internal_result_type();
 }
 inline void Operation_Result::set_result_type(const std::string& value) {
   _internal_set_result_type(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_set:dos.Operation.Result.result_type)
 }
 inline std::string* Operation_Result::mutable_result_type() {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_mutable:dos.Operation.Result.result_type)
   return _internal_mutable_result_type();
 }
 inline const std::string& Operation_Result::_internal_result_type() const {
@@ -1085,26 +1055,26 @@ inline void Operation_Result::set_result_type(std::string&& value) {
   _has_bits_[0] |= 0x00000001u;
   result_type_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_set_rvalue:dos.Operation.Result.result_type)
 }
 inline void Operation_Result::set_result_type(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _has_bits_[0] |= 0x00000001u;
   result_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_set_char:dos.Operation.Result.result_type)
 }
 inline void Operation_Result::set_result_type(const char* value, size_t size) {
   _has_bits_[0] |= 0x00000001u;
   result_type_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_set_pointer:dos.Operation.Result.result_type)
 }
 inline std::string* Operation_Result::_internal_mutable_result_type() {
   _has_bits_[0] |= 0x00000001u;
   return result_type_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Operation_Result::release_result_type() {
-  // @@protoc_insertion_point(field_release:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_release:dos.Operation.Result.result_type)
   if (!_internal_has_result_type()) {
     return nullptr;
   }
@@ -1118,7 +1088,7 @@ inline void Operation_Result::set_allocated_result_type(std::string* result_type
     _has_bits_[0] &= ~0x00000001u;
   }
   result_type_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result_type);
-  // @@protoc_insertion_point(field_set_allocated:tutorial.Operation.Result.result_type)
+  // @@protoc_insertion_point(field_set_allocated:dos.Operation.Result.result_type)
 }
 
 // required string result_value = 2;
@@ -1134,15 +1104,15 @@ inline void Operation_Result::clear_result_value() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline const std::string& Operation_Result::result_value() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_get:dos.Operation.Result.result_value)
   return _internal_result_value();
 }
 inline void Operation_Result::set_result_value(const std::string& value) {
   _internal_set_result_value(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_set:dos.Operation.Result.result_value)
 }
 inline std::string* Operation_Result::mutable_result_value() {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_mutable:dos.Operation.Result.result_value)
   return _internal_mutable_result_value();
 }
 inline const std::string& Operation_Result::_internal_result_value() const {
@@ -1156,26 +1126,26 @@ inline void Operation_Result::set_result_value(std::string&& value) {
   _has_bits_[0] |= 0x00000002u;
   result_value_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_set_rvalue:dos.Operation.Result.result_value)
 }
 inline void Operation_Result::set_result_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _has_bits_[0] |= 0x00000002u;
   result_value_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_set_char:dos.Operation.Result.result_value)
 }
 inline void Operation_Result::set_result_value(const char* value, size_t size) {
   _has_bits_[0] |= 0x00000002u;
   result_value_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_set_pointer:dos.Operation.Result.result_value)
 }
 inline std::string* Operation_Result::_internal_mutable_result_value() {
   _has_bits_[0] |= 0x00000002u;
   return result_value_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Operation_Result::release_result_value() {
-  // @@protoc_insertion_point(field_release:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_release:dos.Operation.Result.result_value)
   if (!_internal_has_result_value()) {
     return nullptr;
   }
@@ -1189,14 +1159,14 @@ inline void Operation_Result::set_allocated_result_value(std::string* result_val
     _has_bits_[0] &= ~0x00000002u;
   }
   result_value_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result_value);
-  // @@protoc_insertion_point(field_set_allocated:tutorial.Operation.Result.result_value)
+  // @@protoc_insertion_point(field_set_allocated:dos.Operation.Result.result_value)
 }
 
 // -------------------------------------------------------------------
 
 // Operation
 
-// required .tutorial.Operation.OperationType operation = 1;
+// required .dos.Operation.OperationType operation = 1;
 inline bool Operation::_internal_has_operation() const {
   bool value = (_has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -1208,21 +1178,21 @@ inline void Operation::clear_operation() {
   operation_ = 0;
   _has_bits_[0] &= ~0x00000001u;
 }
-inline ::tutorial::Operation_OperationType Operation::_internal_operation() const {
-  return static_cast< ::tutorial::Operation_OperationType >(operation_);
+inline ::dos::Operation_OperationType Operation::_internal_operation() const {
+  return static_cast< ::dos::Operation_OperationType >(operation_);
 }
-inline ::tutorial::Operation_OperationType Operation::operation() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.operation)
+inline ::dos::Operation_OperationType Operation::operation() const {
+  // @@protoc_insertion_point(field_get:dos.Operation.operation)
   return _internal_operation();
 }
-inline void Operation::_internal_set_operation(::tutorial::Operation_OperationType value) {
-  assert(::tutorial::Operation_OperationType_IsValid(value));
+inline void Operation::_internal_set_operation(::dos::Operation_OperationType value) {
+  assert(::dos::Operation_OperationType_IsValid(value));
   _has_bits_[0] |= 0x00000001u;
   operation_ = value;
 }
-inline void Operation::set_operation(::tutorial::Operation_OperationType value) {
+inline void Operation::set_operation(::dos::Operation_OperationType value) {
   _internal_set_operation(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.operation)
+  // @@protoc_insertion_point(field_set:dos.Operation.operation)
 }
 
 // optional uint32 port = 2 [default = 0];
@@ -1241,7 +1211,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Operation::_internal_port() const {
   return port_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Operation::port() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.port)
+  // @@protoc_insertion_point(field_get:dos.Operation.port)
   return _internal_port();
 }
 inline void Operation::_internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1250,38 +1220,10 @@ inline void Operation::_internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value)
 }
 inline void Operation::set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_port(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.port)
+  // @@protoc_insertion_point(field_set:dos.Operation.port)
 }
 
-// optional bool query = 3 [default = false];
-inline bool Operation::_internal_has_query() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool Operation::has_query() const {
-  return _internal_has_query();
-}
-inline void Operation::clear_query() {
-  query_ = false;
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline bool Operation::_internal_query() const {
-  return query_;
-}
-inline bool Operation::query() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.query)
-  return _internal_query();
-}
-inline void Operation::_internal_set_query(bool value) {
-  _has_bits_[0] |= 0x00000004u;
-  query_ = value;
-}
-inline void Operation::set_query(bool value) {
-  _internal_set_query(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.query)
-}
-
-// repeated .tutorial.Operation.DistributeTask task = 4;
+// repeated .dos.Operation.DistributeTask task = 3;
 inline int Operation::_internal_task_size() const {
   return task_.size();
 }
@@ -1291,36 +1233,36 @@ inline int Operation::task_size() const {
 inline void Operation::clear_task() {
   task_.Clear();
 }
-inline ::tutorial::Operation_DistributeTask* Operation::mutable_task(int index) {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.task)
+inline ::dos::Operation_DistributeTask* Operation::mutable_task(int index) {
+  // @@protoc_insertion_point(field_mutable:dos.Operation.task)
   return task_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_DistributeTask >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >*
 Operation::mutable_task() {
-  // @@protoc_insertion_point(field_mutable_list:tutorial.Operation.task)
+  // @@protoc_insertion_point(field_mutable_list:dos.Operation.task)
   return &task_;
 }
-inline const ::tutorial::Operation_DistributeTask& Operation::_internal_task(int index) const {
+inline const ::dos::Operation_DistributeTask& Operation::_internal_task(int index) const {
   return task_.Get(index);
 }
-inline const ::tutorial::Operation_DistributeTask& Operation::task(int index) const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.task)
+inline const ::dos::Operation_DistributeTask& Operation::task(int index) const {
+  // @@protoc_insertion_point(field_get:dos.Operation.task)
   return _internal_task(index);
 }
-inline ::tutorial::Operation_DistributeTask* Operation::_internal_add_task() {
+inline ::dos::Operation_DistributeTask* Operation::_internal_add_task() {
   return task_.Add();
 }
-inline ::tutorial::Operation_DistributeTask* Operation::add_task() {
-  // @@protoc_insertion_point(field_add:tutorial.Operation.task)
+inline ::dos::Operation_DistributeTask* Operation::add_task() {
+  // @@protoc_insertion_point(field_add:dos.Operation.task)
   return _internal_add_task();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_DistributeTask >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >&
 Operation::task() const {
-  // @@protoc_insertion_point(field_list:tutorial.Operation.task)
+  // @@protoc_insertion_point(field_list:dos.Operation.task)
   return task_;
 }
 
-// repeated .tutorial.Operation.Result result = 5;
+// repeated .dos.Operation.Result result = 4;
 inline int Operation::_internal_result_size() const {
   return result_.size();
 }
@@ -1330,61 +1272,33 @@ inline int Operation::result_size() const {
 inline void Operation::clear_result() {
   result_.Clear();
 }
-inline ::tutorial::Operation_Result* Operation::mutable_result(int index) {
-  // @@protoc_insertion_point(field_mutable:tutorial.Operation.result)
+inline ::dos::Operation_Result* Operation::mutable_result(int index) {
+  // @@protoc_insertion_point(field_mutable:dos.Operation.result)
   return result_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_Result >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >*
 Operation::mutable_result() {
-  // @@protoc_insertion_point(field_mutable_list:tutorial.Operation.result)
+  // @@protoc_insertion_point(field_mutable_list:dos.Operation.result)
   return &result_;
 }
-inline const ::tutorial::Operation_Result& Operation::_internal_result(int index) const {
+inline const ::dos::Operation_Result& Operation::_internal_result(int index) const {
   return result_.Get(index);
 }
-inline const ::tutorial::Operation_Result& Operation::result(int index) const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.result)
+inline const ::dos::Operation_Result& Operation::result(int index) const {
+  // @@protoc_insertion_point(field_get:dos.Operation.result)
   return _internal_result(index);
 }
-inline ::tutorial::Operation_Result* Operation::_internal_add_result() {
+inline ::dos::Operation_Result* Operation::_internal_add_result() {
   return result_.Add();
 }
-inline ::tutorial::Operation_Result* Operation::add_result() {
-  // @@protoc_insertion_point(field_add:tutorial.Operation.result)
+inline ::dos::Operation_Result* Operation::add_result() {
+  // @@protoc_insertion_point(field_add:dos.Operation.result)
   return _internal_add_result();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::tutorial::Operation_Result >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >&
 Operation::result() const {
-  // @@protoc_insertion_point(field_list:tutorial.Operation.result)
+  // @@protoc_insertion_point(field_list:dos.Operation.result)
   return result_;
-}
-
-// optional bool task_finished = 6 [default = false];
-inline bool Operation::_internal_has_task_finished() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
-  return value;
-}
-inline bool Operation::has_task_finished() const {
-  return _internal_has_task_finished();
-}
-inline void Operation::clear_task_finished() {
-  task_finished_ = false;
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline bool Operation::_internal_task_finished() const {
-  return task_finished_;
-}
-inline bool Operation::task_finished() const {
-  // @@protoc_insertion_point(field_get:tutorial.Operation.task_finished)
-  return _internal_task_finished();
-}
-inline void Operation::_internal_set_task_finished(bool value) {
-  _has_bits_[0] |= 0x00000008u;
-  task_finished_ = value;
-}
-inline void Operation::set_task_finished(bool value) {
-  _internal_set_task_finished(value);
-  // @@protoc_insertion_point(field_set:tutorial.Operation.task_finished)
 }
 
 #ifdef __GNUC__
@@ -1397,14 +1311,14 @@ inline void Operation::set_task_finished(bool value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace tutorial
+}  // namespace dos
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::tutorial::Operation_OperationType> : ::std::true_type {};
+template <> struct is_proto_enum< ::dos::Operation_OperationType> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::tutorial::Operation_OperationType>() {
-  return ::tutorial::Operation_OperationType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::dos::Operation_OperationType>() {
+  return ::dos::Operation_OperationType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

@@ -16,7 +16,7 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_mini_5fdos_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Operation_DistributeTask_mini_5fdos_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_mini_5fdos_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Operation_Result_mini_5fdos_2eproto;
-namespace tutorial {
+namespace dos {
 class Operation_DistributeTaskDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Operation_DistributeTask> _instance;
@@ -29,16 +29,16 @@ class OperationDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Operation> _instance;
 } _Operation_default_instance_;
-}  // namespace tutorial
+}  // namespace dos
 static void InitDefaultsscc_info_Operation_mini_5fdos_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::tutorial::_Operation_default_instance_;
-    new (ptr) ::tutorial::Operation();
+    void* ptr = &::dos::_Operation_default_instance_;
+    new (ptr) ::dos::Operation();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::tutorial::Operation::InitAsDefaultInstance();
+  ::dos::Operation::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Operation_mini_5fdos_2eproto =
@@ -50,11 +50,11 @@ static void InitDefaultsscc_info_Operation_DistributeTask_mini_5fdos_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::tutorial::_Operation_DistributeTask_default_instance_;
-    new (ptr) ::tutorial::Operation_DistributeTask();
+    void* ptr = &::dos::_Operation_DistributeTask_default_instance_;
+    new (ptr) ::dos::Operation_DistributeTask();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::tutorial::Operation_DistributeTask::InitAsDefaultInstance();
+  ::dos::Operation_DistributeTask::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Operation_DistributeTask_mini_5fdos_2eproto =
@@ -64,11 +64,11 @@ static void InitDefaultsscc_info_Operation_Result_mini_5fdos_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::tutorial::_Operation_Result_default_instance_;
-    new (ptr) ::tutorial::Operation_Result();
+    void* ptr = &::dos::_Operation_Result_default_instance_;
+    new (ptr) ::dos::Operation_Result();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::tutorial::Operation_Result::InitAsDefaultInstance();
+  ::dos::Operation_Result::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Operation_Result_mini_5fdos_2eproto =
@@ -79,72 +79,67 @@ static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptor
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_mini_5fdos_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_mini_5fdos_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_DistributeTask, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_DistributeTask, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_DistributeTask, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_DistributeTask, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_DistributeTask, operation_num_type_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_DistributeTask, operation_num_one_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_DistributeTask, operation_num_two_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_DistributeTask, operation_label_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_DistributeTask, operation_num_type_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_DistributeTask, operation_num_one_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_DistributeTask, operation_num_two_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_DistributeTask, operation_label_),
   0,
   1,
   2,
   3,
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_Result, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_Result, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_Result, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_Result, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_Result, result_type_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation_Result, result_value_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_Result, result_type_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation_Result, result_value_),
   0,
   1,
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, operation_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, port_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, query_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, task_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, result_),
-  PROTOBUF_FIELD_OFFSET(::tutorial::Operation, task_finished_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation, operation_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation, port_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation, task_),
+  PROTOBUF_FIELD_OFFSET(::dos::Operation, result_),
   0,
   1,
-  2,
   ~0u,
   ~0u,
-  3,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 9, sizeof(::tutorial::Operation_DistributeTask)},
-  { 13, 20, sizeof(::tutorial::Operation_Result)},
-  { 22, 33, sizeof(::tutorial::Operation)},
+  { 0, 9, sizeof(::dos::Operation_DistributeTask)},
+  { 13, 20, sizeof(::dos::Operation_Result)},
+  { 22, 31, sizeof(::dos::Operation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tutorial::_Operation_DistributeTask_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tutorial::_Operation_Result_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tutorial::_Operation_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::dos::_Operation_DistributeTask_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::dos::_Operation_Result_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::dos::_Operation_default_instance_),
 };
 
 const char descriptor_table_protodef_mini_5fdos_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016mini_dos.proto\022\010tutorial\"\350\003\n\tOperation"
-  "\0224\n\toperation\030\001 \002(\0162!.tutorial.Operation"
-  ".OperationType\022\017\n\004port\030\002 \001(\r:\0010\022\024\n\005query"
-  "\030\003 \001(\010:\005false\0220\n\004task\030\004 \003(\0132\".tutorial.O"
-  "peration.DistributeTask\022*\n\006result\030\005 \003(\0132"
-  "\032.tutorial.Operation.Result\022\034\n\rtask_fini"
-  "shed\030\006 \001(\010:\005false\032{\n\016DistributeTask\022\032\n\022o"
-  "peration_num_type\030\001 \002(\t\022\031\n\021operation_num"
-  "_one\030\002 \002(\t\022\031\n\021operation_num_two\030\003 \002(\t\022\027\n"
-  "\017operation_label\030\004 \002(\t\0323\n\006Result\022\023\n\013resu"
-  "lt_type\030\001 \002(\t\022\024\n\014result_value\030\002 \002(\t\"P\n\rO"
-  "perationType\022\014\n\010REGISTER\020\000\022\t\n\005QUERY\020\001\022\016\n"
-  "\nDISTRIBUTE\020\002\022\n\n\006RETURN\020\003\022\n\n\006FINISH\020\004"
+  "\n\016mini_dos.proto\022\003dos\"\245\003\n\tOperation\022/\n\to"
+  "peration\030\001 \002(\0162\034.dos.Operation.Operation"
+  "Type\022\017\n\004port\030\002 \001(\r:\0010\022+\n\004task\030\003 \003(\0132\035.do"
+  "s.Operation.DistributeTask\022%\n\006result\030\004 \003"
+  "(\0132\025.dos.Operation.Result\032{\n\016DistributeT"
+  "ask\022\032\n\022operation_num_type\030\001 \002(\t\022\031\n\021opera"
+  "tion_num_one\030\002 \002(\t\022\031\n\021operation_num_two\030"
+  "\003 \002(\t\022\027\n\017operation_label\030\004 \002(\t\0323\n\006Result"
+  "\022\023\n\013result_type\030\001 \002(\t\022\024\n\014result_value\030\002 "
+  "\002(\t\"P\n\rOperationType\022\014\n\010REGISTER\020\000\022\t\n\005QU"
+  "ERY\020\001\022\016\n\nDISTRIBUTE\020\002\022\n\n\006RETURN\020\003\022\n\n\006FIN"
+  "ISH\020\004"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_mini_5fdos_2eproto_deps[1] = {
 };
@@ -156,7 +151,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_min
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_mini_5fdos_2eproto_once;
 static bool descriptor_table_mini_5fdos_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mini_5fdos_2eproto = {
-  &descriptor_table_mini_5fdos_2eproto_initialized, descriptor_table_protodef_mini_5fdos_2eproto, "mini_dos.proto", 517,
+  &descriptor_table_mini_5fdos_2eproto_initialized, descriptor_table_protodef_mini_5fdos_2eproto, "mini_dos.proto", 445,
   &descriptor_table_mini_5fdos_2eproto_once, descriptor_table_mini_5fdos_2eproto_sccs, descriptor_table_mini_5fdos_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_mini_5fdos_2eproto::offsets,
   file_level_metadata_mini_5fdos_2eproto, 3, file_level_enum_descriptors_mini_5fdos_2eproto, file_level_service_descriptors_mini_5fdos_2eproto,
@@ -164,7 +159,7 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mini_5
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_mini_5fdos_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_mini_5fdos_2eproto), true);
-namespace tutorial {
+namespace dos {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Operation_OperationType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_mini_5fdos_2eproto);
   return file_level_enum_descriptors_mini_5fdos_2eproto[0];
@@ -217,7 +212,7 @@ class Operation_DistributeTask::_Internal {
 Operation_DistributeTask::Operation_DistributeTask()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(constructor:dos.Operation.DistributeTask)
 }
 Operation_DistributeTask::Operation_DistributeTask(const Operation_DistributeTask& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -240,7 +235,7 @@ Operation_DistributeTask::Operation_DistributeTask(const Operation_DistributeTas
   if (from._internal_has_operation_label()) {
     operation_label_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.operation_label_);
   }
-  // @@protoc_insertion_point(copy_constructor:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(copy_constructor:dos.Operation.DistributeTask)
 }
 
 void Operation_DistributeTask::SharedCtor() {
@@ -252,7 +247,7 @@ void Operation_DistributeTask::SharedCtor() {
 }
 
 Operation_DistributeTask::~Operation_DistributeTask() {
-  // @@protoc_insertion_point(destructor:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(destructor:dos.Operation.DistributeTask)
   SharedDtor();
 }
 
@@ -273,7 +268,7 @@ const Operation_DistributeTask& Operation_DistributeTask::default_instance() {
 
 
 void Operation_DistributeTask::Clear() {
-// @@protoc_insertion_point(message_clear_start:tutorial.Operation.DistributeTask)
+// @@protoc_insertion_point(message_clear_start:dos.Operation.DistributeTask)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -311,7 +306,7 @@ const char* Operation_DistributeTask::_InternalParse(const char* ptr, ::PROTOBUF
           auto str = _internal_mutable_operation_num_type();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Operation.DistributeTask.operation_num_type");
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dos.Operation.DistributeTask.operation_num_type");
           #endif  // !NDEBUG
           CHK_(ptr);
         } else goto handle_unusual;
@@ -322,7 +317,7 @@ const char* Operation_DistributeTask::_InternalParse(const char* ptr, ::PROTOBUF
           auto str = _internal_mutable_operation_num_one();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Operation.DistributeTask.operation_num_one");
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dos.Operation.DistributeTask.operation_num_one");
           #endif  // !NDEBUG
           CHK_(ptr);
         } else goto handle_unusual;
@@ -333,7 +328,7 @@ const char* Operation_DistributeTask::_InternalParse(const char* ptr, ::PROTOBUF
           auto str = _internal_mutable_operation_num_two();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Operation.DistributeTask.operation_num_two");
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dos.Operation.DistributeTask.operation_num_two");
           #endif  // !NDEBUG
           CHK_(ptr);
         } else goto handle_unusual;
@@ -344,7 +339,7 @@ const char* Operation_DistributeTask::_InternalParse(const char* ptr, ::PROTOBUF
           auto str = _internal_mutable_operation_label();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Operation.DistributeTask.operation_label");
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dos.Operation.DistributeTask.operation_label");
           #endif  // !NDEBUG
           CHK_(ptr);
         } else goto handle_unusual;
@@ -372,7 +367,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Operation_DistributeTask::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(serialize_to_array_start:dos.Operation.DistributeTask)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -382,7 +377,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_operation_num_type().data(), static_cast<int>(this->_internal_operation_num_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "tutorial.Operation.DistributeTask.operation_num_type");
+      "dos.Operation.DistributeTask.operation_num_type");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_operation_num_type(), target);
   }
@@ -392,7 +387,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_operation_num_one().data(), static_cast<int>(this->_internal_operation_num_one().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "tutorial.Operation.DistributeTask.operation_num_one");
+      "dos.Operation.DistributeTask.operation_num_one");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_operation_num_one(), target);
   }
@@ -402,7 +397,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_operation_num_two().data(), static_cast<int>(this->_internal_operation_num_two().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "tutorial.Operation.DistributeTask.operation_num_two");
+      "dos.Operation.DistributeTask.operation_num_two");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_operation_num_two(), target);
   }
@@ -412,7 +407,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_operation_label().data(), static_cast<int>(this->_internal_operation_label().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "tutorial.Operation.DistributeTask.operation_label");
+      "dos.Operation.DistributeTask.operation_label");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_operation_label(), target);
   }
@@ -421,12 +416,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(serialize_to_array_end:dos.Operation.DistributeTask)
   return target;
 }
 
 size_t Operation_DistributeTask::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:tutorial.Operation.DistributeTask)
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:dos.Operation.DistributeTask)
   size_t total_size = 0;
 
   if (_internal_has_operation_num_type()) {
@@ -460,7 +455,7 @@ size_t Operation_DistributeTask::RequiredFieldsByteSizeFallback() const {
   return total_size;
 }
 size_t Operation_DistributeTask::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:tutorial.Operation.DistributeTask)
+// @@protoc_insertion_point(message_byte_size_start:dos.Operation.DistributeTask)
   size_t total_size = 0;
 
   if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
@@ -501,22 +496,22 @@ size_t Operation_DistributeTask::ByteSizeLong() const {
 }
 
 void Operation_DistributeTask::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:tutorial.Operation.DistributeTask)
+// @@protoc_insertion_point(generalized_merge_from_start:dos.Operation.DistributeTask)
   GOOGLE_DCHECK_NE(&from, this);
   const Operation_DistributeTask* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Operation_DistributeTask>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dos.Operation.DistributeTask)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:tutorial.Operation.DistributeTask)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dos.Operation.DistributeTask)
     MergeFrom(*source);
   }
 }
 
 void Operation_DistributeTask::MergeFrom(const Operation_DistributeTask& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:tutorial.Operation.DistributeTask)
+// @@protoc_insertion_point(class_specific_merge_from_start:dos.Operation.DistributeTask)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -544,14 +539,14 @@ void Operation_DistributeTask::MergeFrom(const Operation_DistributeTask& from) {
 }
 
 void Operation_DistributeTask::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:tutorial.Operation.DistributeTask)
+// @@protoc_insertion_point(generalized_copy_from_start:dos.Operation.DistributeTask)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Operation_DistributeTask::CopyFrom(const Operation_DistributeTask& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:tutorial.Operation.DistributeTask)
+// @@protoc_insertion_point(class_specific_copy_from_start:dos.Operation.DistributeTask)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -599,7 +594,7 @@ class Operation_Result::_Internal {
 Operation_Result::Operation_Result()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:tutorial.Operation.Result)
+  // @@protoc_insertion_point(constructor:dos.Operation.Result)
 }
 Operation_Result::Operation_Result(const Operation_Result& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -614,7 +609,7 @@ Operation_Result::Operation_Result(const Operation_Result& from)
   if (from._internal_has_result_value()) {
     result_value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.result_value_);
   }
-  // @@protoc_insertion_point(copy_constructor:tutorial.Operation.Result)
+  // @@protoc_insertion_point(copy_constructor:dos.Operation.Result)
 }
 
 void Operation_Result::SharedCtor() {
@@ -624,7 +619,7 @@ void Operation_Result::SharedCtor() {
 }
 
 Operation_Result::~Operation_Result() {
-  // @@protoc_insertion_point(destructor:tutorial.Operation.Result)
+  // @@protoc_insertion_point(destructor:dos.Operation.Result)
   SharedDtor();
 }
 
@@ -643,7 +638,7 @@ const Operation_Result& Operation_Result::default_instance() {
 
 
 void Operation_Result::Clear() {
-// @@protoc_insertion_point(message_clear_start:tutorial.Operation.Result)
+// @@protoc_insertion_point(message_clear_start:dos.Operation.Result)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -675,7 +670,7 @@ const char* Operation_Result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           auto str = _internal_mutable_result_type();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Operation.Result.result_type");
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dos.Operation.Result.result_type");
           #endif  // !NDEBUG
           CHK_(ptr);
         } else goto handle_unusual;
@@ -686,7 +681,7 @@ const char* Operation_Result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           auto str = _internal_mutable_result_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tutorial.Operation.Result.result_value");
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "dos.Operation.Result.result_value");
           #endif  // !NDEBUG
           CHK_(ptr);
         } else goto handle_unusual;
@@ -714,7 +709,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Operation_Result::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:tutorial.Operation.Result)
+  // @@protoc_insertion_point(serialize_to_array_start:dos.Operation.Result)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -724,7 +719,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_result_type().data(), static_cast<int>(this->_internal_result_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "tutorial.Operation.Result.result_type");
+      "dos.Operation.Result.result_type");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_result_type(), target);
   }
@@ -734,7 +729,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_result_value().data(), static_cast<int>(this->_internal_result_value().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "tutorial.Operation.Result.result_value");
+      "dos.Operation.Result.result_value");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_result_value(), target);
   }
@@ -743,12 +738,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:tutorial.Operation.Result)
+  // @@protoc_insertion_point(serialize_to_array_end:dos.Operation.Result)
   return target;
 }
 
 size_t Operation_Result::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:tutorial.Operation.Result)
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:dos.Operation.Result)
   size_t total_size = 0;
 
   if (_internal_has_result_type()) {
@@ -768,7 +763,7 @@ size_t Operation_Result::RequiredFieldsByteSizeFallback() const {
   return total_size;
 }
 size_t Operation_Result::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:tutorial.Operation.Result)
+// @@protoc_insertion_point(message_byte_size_start:dos.Operation.Result)
   size_t total_size = 0;
 
   if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
@@ -799,22 +794,22 @@ size_t Operation_Result::ByteSizeLong() const {
 }
 
 void Operation_Result::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:tutorial.Operation.Result)
+// @@protoc_insertion_point(generalized_merge_from_start:dos.Operation.Result)
   GOOGLE_DCHECK_NE(&from, this);
   const Operation_Result* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Operation_Result>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tutorial.Operation.Result)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dos.Operation.Result)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:tutorial.Operation.Result)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dos.Operation.Result)
     MergeFrom(*source);
   }
 }
 
 void Operation_Result::MergeFrom(const Operation_Result& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:tutorial.Operation.Result)
+// @@protoc_insertion_point(class_specific_merge_from_start:dos.Operation.Result)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -834,14 +829,14 @@ void Operation_Result::MergeFrom(const Operation_Result& from) {
 }
 
 void Operation_Result::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:tutorial.Operation.Result)
+// @@protoc_insertion_point(generalized_copy_from_start:dos.Operation.Result)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Operation_Result::CopyFrom(const Operation_Result& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:tutorial.Operation.Result)
+// @@protoc_insertion_point(class_specific_copy_from_start:dos.Operation.Result)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -880,18 +875,12 @@ class Operation::_Internal {
   static void set_has_port(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
-  static void set_has_query(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_task_finished(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
 };
 
 Operation::Operation()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:tutorial.Operation)
+  // @@protoc_insertion_point(constructor:dos.Operation)
 }
 Operation::Operation(const Operation& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -901,20 +890,20 @@ Operation::Operation(const Operation& from)
       result_(from.result_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&operation_, &from.operation_,
-    static_cast<size_t>(reinterpret_cast<char*>(&task_finished_) -
-    reinterpret_cast<char*>(&operation_)) + sizeof(task_finished_));
-  // @@protoc_insertion_point(copy_constructor:tutorial.Operation)
+    static_cast<size_t>(reinterpret_cast<char*>(&port_) -
+    reinterpret_cast<char*>(&operation_)) + sizeof(port_));
+  // @@protoc_insertion_point(copy_constructor:dos.Operation)
 }
 
 void Operation::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Operation_mini_5fdos_2eproto.base);
   ::memset(&operation_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&task_finished_) -
-      reinterpret_cast<char*>(&operation_)) + sizeof(task_finished_));
+      reinterpret_cast<char*>(&port_) -
+      reinterpret_cast<char*>(&operation_)) + sizeof(port_));
 }
 
 Operation::~Operation() {
-  // @@protoc_insertion_point(destructor:tutorial.Operation)
+  // @@protoc_insertion_point(destructor:dos.Operation)
   SharedDtor();
 }
 
@@ -931,7 +920,7 @@ const Operation& Operation::default_instance() {
 
 
 void Operation::Clear() {
-// @@protoc_insertion_point(message_clear_start:tutorial.Operation)
+// @@protoc_insertion_point(message_clear_start:dos.Operation)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -939,10 +928,10 @@ void Operation::Clear() {
   task_.Clear();
   result_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x00000003u) {
     ::memset(&operation_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&task_finished_) -
-        reinterpret_cast<char*>(&operation_)) + sizeof(task_finished_));
+        reinterpret_cast<char*>(&port_) -
+        reinterpret_cast<char*>(&operation_)) + sizeof(port_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -956,13 +945,13 @@ const char* Operation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // required .tutorial.Operation.OperationType operation = 1;
+      // required .dos.Operation.OperationType operation = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::tutorial::Operation_OperationType_IsValid(val))) {
-            _internal_set_operation(static_cast<::tutorial::Operation_OperationType>(val));
+          if (PROTOBUF_PREDICT_TRUE(::dos::Operation_OperationType_IsValid(val))) {
+            _internal_set_operation(static_cast<::dos::Operation_OperationType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
@@ -976,44 +965,28 @@ const char* Operation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional bool query = 3 [default = false];
+      // repeated .dos.Operation.DistributeTask task = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _Internal::set_has_query(&has_bits);
-          query_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .tutorial.Operation.DistributeTask task = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_task(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .tutorial.Operation.Result result = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // repeated .dos.Operation.Result result = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_result(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // optional bool task_finished = 6 [default = false];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          _Internal::set_has_task_finished(&has_bits);
-          task_finished_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1039,12 +1012,12 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Operation::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:tutorial.Operation)
+  // @@protoc_insertion_point(serialize_to_array_start:dos.Operation)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .tutorial.Operation.OperationType operation = 1;
+  // required .dos.Operation.OperationType operation = 1;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -1057,47 +1030,35 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_port(), target);
   }
 
-  // optional bool query = 3 [default = false];
-  if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_query(), target);
-  }
-
-  // repeated .tutorial.Operation.DistributeTask task = 4;
+  // repeated .dos.Operation.DistributeTask task = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_task_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, this->_internal_task(i), target, stream);
+      InternalWriteMessage(3, this->_internal_task(i), target, stream);
   }
 
-  // repeated .tutorial.Operation.Result result = 5;
+  // repeated .dos.Operation.Result result = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_result_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, this->_internal_result(i), target, stream);
-  }
-
-  // optional bool task_finished = 6 [default = false];
-  if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_task_finished(), target);
+      InternalWriteMessage(4, this->_internal_result(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:tutorial.Operation)
+  // @@protoc_insertion_point(serialize_to_array_end:dos.Operation)
   return target;
 }
 
 size_t Operation::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:tutorial.Operation)
+// @@protoc_insertion_point(message_byte_size_start:dos.Operation)
   size_t total_size = 0;
 
-  // required .tutorial.Operation.OperationType operation = 1;
+  // required .dos.Operation.OperationType operation = 1;
   if (_internal_has_operation()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_operation());
@@ -1106,40 +1067,28 @@ size_t Operation::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .tutorial.Operation.DistributeTask task = 4;
+  // repeated .dos.Operation.DistributeTask task = 3;
   total_size += 1UL * this->_internal_task_size();
   for (const auto& msg : this->task_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .tutorial.Operation.Result result = 5;
+  // repeated .dos.Operation.Result result = 4;
   total_size += 1UL * this->_internal_result_size();
   for (const auto& msg : this->result_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // optional uint32 port = 2 [default = 0];
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000eu) {
-    // optional uint32 port = 2 [default = 0];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_port());
-    }
-
-    // optional bool query = 3 [default = false];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 + 1;
-    }
-
-    // optional bool task_finished = 6 [default = false];
-    if (cached_has_bits & 0x00000008u) {
-      total_size += 1 + 1;
-    }
-
+  if (cached_has_bits & 0x00000002u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_port());
   }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1150,22 +1099,22 @@ size_t Operation::ByteSizeLong() const {
 }
 
 void Operation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:tutorial.Operation)
+// @@protoc_insertion_point(generalized_merge_from_start:dos.Operation)
   GOOGLE_DCHECK_NE(&from, this);
   const Operation* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Operation>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tutorial.Operation)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:dos.Operation)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:tutorial.Operation)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:dos.Operation)
     MergeFrom(*source);
   }
 }
 
 void Operation::MergeFrom(const Operation& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:tutorial.Operation)
+// @@protoc_insertion_point(class_specific_merge_from_start:dos.Operation)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1174,32 +1123,26 @@ void Operation::MergeFrom(const Operation& from) {
   task_.MergeFrom(from.task_);
   result_.MergeFrom(from.result_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
       operation_ = from.operation_;
     }
     if (cached_has_bits & 0x00000002u) {
       port_ = from.port_;
     }
-    if (cached_has_bits & 0x00000004u) {
-      query_ = from.query_;
-    }
-    if (cached_has_bits & 0x00000008u) {
-      task_finished_ = from.task_finished_;
-    }
     _has_bits_[0] |= cached_has_bits;
   }
 }
 
 void Operation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:tutorial.Operation)
+// @@protoc_insertion_point(generalized_copy_from_start:dos.Operation)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Operation::CopyFrom(const Operation& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:tutorial.Operation)
+// @@protoc_insertion_point(class_specific_copy_from_start:dos.Operation)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1220,8 +1163,6 @@ void Operation::InternalSwap(Operation* other) {
   result_.InternalSwap(&other->result_);
   swap(operation_, other->operation_);
   swap(port_, other->port_);
-  swap(query_, other->query_);
-  swap(task_finished_, other->task_finished_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Operation::GetMetadata() const {
@@ -1230,16 +1171,16 @@ void Operation::InternalSwap(Operation* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace tutorial
+}  // namespace dos
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::tutorial::Operation_DistributeTask* Arena::CreateMaybeMessage< ::tutorial::Operation_DistributeTask >(Arena* arena) {
-  return Arena::CreateInternal< ::tutorial::Operation_DistributeTask >(arena);
+template<> PROTOBUF_NOINLINE ::dos::Operation_DistributeTask* Arena::CreateMaybeMessage< ::dos::Operation_DistributeTask >(Arena* arena) {
+  return Arena::CreateInternal< ::dos::Operation_DistributeTask >(arena);
 }
-template<> PROTOBUF_NOINLINE ::tutorial::Operation_Result* Arena::CreateMaybeMessage< ::tutorial::Operation_Result >(Arena* arena) {
-  return Arena::CreateInternal< ::tutorial::Operation_Result >(arena);
+template<> PROTOBUF_NOINLINE ::dos::Operation_Result* Arena::CreateMaybeMessage< ::dos::Operation_Result >(Arena* arena) {
+  return Arena::CreateInternal< ::dos::Operation_Result >(arena);
 }
-template<> PROTOBUF_NOINLINE ::tutorial::Operation* Arena::CreateMaybeMessage< ::tutorial::Operation >(Arena* arena) {
-  return Arena::CreateInternal< ::tutorial::Operation >(arena);
+template<> PROTOBUF_NOINLINE ::dos::Operation* Arena::CreateMaybeMessage< ::dos::Operation >(Arena* arena) {
+  return Arena::CreateInternal< ::dos::Operation >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

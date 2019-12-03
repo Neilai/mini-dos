@@ -1,4 +1,4 @@
-package tutorial;
+package dos;
 
 
 message Operation {
@@ -11,26 +11,23 @@ message Operation {
 	}
 
 	required OperationType operation = 1;
-
+	
 	optional uint32 port = 2 [default = 0];
 	
-	optional bool query = 3 [default = false];
-
 	message DistributeTask {
 		required string operation_num_type = 1;
 		required string operation_num_one = 2;
 		required string operation_num_two = 3;
 		required string operation_label = 4;
 	}
-	repeated DistributeTask task = 4;
-
+	repeated DistributeTask task = 3;
+	
 	message Result {
 		required string result_type = 1;
 		required string result_value = 2;
 	}
-	repeated Result result = 5;
-
-	optional bool task_finished = 6 [default = false];
+	repeated Result result = 4;
+	
 
 }
 
