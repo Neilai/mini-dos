@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     workerAddr.sin_family = PF_INET;
-    workerAddr.sin_port = htons(atoi(argv[1]));
+    workerAddr.sin_port = htons(WORKER_PORT);
     workerAddr.sin_addr.s_addr = inet_addr(WORKER_IP);
         const char *computing = "client请求计算\n";
     int sockWorker = socket(PF_INET, SOCK_STREAM, 0);
