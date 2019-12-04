@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
                 struct sockaddr_in client_address;
                 socklen_t client_addrLength = sizeof(struct sockaddr_in);
                 int clientfd = accept(listener, (struct sockaddr *)&client_address, &client_addrLength);
-                printf("client connection from: %s : % d(IP : port), clientfd = %d \n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port), clientfd);
+                printf("新连接: %s : % d(IP : port), clientfd = %d \n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port), clientfd);
                 addfd(epfd, clientfd, true);
             }
             else if (events[i].events & (EPOLLRDHUP | EPOLLHUP | EPOLLERR))

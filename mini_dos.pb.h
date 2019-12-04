@@ -682,7 +682,7 @@ class Operation :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >&
       result() const;
 
-  // required .dos.Operation.OperationType operation = 1;
+  // required .dos.Operation.OperationType operation = 1 [default = QUERY];
   bool has_operation() const;
   private:
   bool _internal_has_operation() const;
@@ -1166,7 +1166,7 @@ inline void Operation_Result::set_allocated_result_value(std::string* result_val
 
 // Operation
 
-// required .dos.Operation.OperationType operation = 1;
+// required .dos.Operation.OperationType operation = 1 [default = QUERY];
 inline bool Operation::_internal_has_operation() const {
   bool value = (_has_bits_[0] & 0x00000001u) != 0;
   return value;

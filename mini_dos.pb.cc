@@ -128,18 +128,18 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_mini_5fdos_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016mini_dos.proto\022\003dos\"\245\003\n\tOperation\022/\n\to"
+  "\n\016mini_dos.proto\022\003dos\"\254\003\n\tOperation\0226\n\to"
   "peration\030\001 \002(\0162\034.dos.Operation.Operation"
-  "Type\022\017\n\004port\030\002 \001(\r:\0010\022+\n\004task\030\003 \003(\0132\035.do"
-  "s.Operation.DistributeTask\022%\n\006result\030\004 \003"
-  "(\0132\025.dos.Operation.Result\032{\n\016DistributeT"
-  "ask\022\032\n\022operation_num_type\030\001 \002(\t\022\031\n\021opera"
-  "tion_num_one\030\002 \002(\t\022\031\n\021operation_num_two\030"
-  "\003 \002(\t\022\027\n\017operation_label\030\004 \002(\t\0323\n\006Result"
-  "\022\023\n\013result_type\030\001 \002(\t\022\024\n\014result_value\030\002 "
-  "\002(\t\"P\n\rOperationType\022\t\n\005QUERY\020\000\022\014\n\010REGIS"
-  "TER\020\001\022\016\n\nDISTRIBUTE\020\002\022\n\n\006RETURN\020\003\022\n\n\006FIN"
-  "ISH\020\004"
+  "Type:\005QUERY\022\017\n\004port\030\002 \001(\r:\0010\022+\n\004task\030\003 \003"
+  "(\0132\035.dos.Operation.DistributeTask\022%\n\006res"
+  "ult\030\004 \003(\0132\025.dos.Operation.Result\032{\n\016Dist"
+  "ributeTask\022\032\n\022operation_num_type\030\001 \002(\t\022\031"
+  "\n\021operation_num_one\030\002 \002(\t\022\031\n\021operation_n"
+  "um_two\030\003 \002(\t\022\027\n\017operation_label\030\004 \002(\t\0323\n"
+  "\006Result\022\023\n\013result_type\030\001 \002(\t\022\024\n\014result_v"
+  "alue\030\002 \002(\t\"P\n\rOperationType\022\t\n\005QUERY\020\000\022\014"
+  "\n\010REGISTER\020\001\022\016\n\nDISTRIBUTE\020\002\022\n\n\006RETURN\020\003"
+  "\022\n\n\006FINISH\020\004"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_mini_5fdos_2eproto_deps[1] = {
 };
@@ -151,7 +151,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_min
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_mini_5fdos_2eproto_once;
 static bool descriptor_table_mini_5fdos_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mini_5fdos_2eproto = {
-  &descriptor_table_mini_5fdos_2eproto_initialized, descriptor_table_protodef_mini_5fdos_2eproto, "mini_dos.proto", 445,
+  &descriptor_table_mini_5fdos_2eproto_initialized, descriptor_table_protodef_mini_5fdos_2eproto, "mini_dos.proto", 452,
   &descriptor_table_mini_5fdos_2eproto_once, descriptor_table_mini_5fdos_2eproto_sccs, descriptor_table_mini_5fdos_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_mini_5fdos_2eproto::offsets,
   file_level_metadata_mini_5fdos_2eproto, 3, file_level_enum_descriptors_mini_5fdos_2eproto, file_level_service_descriptors_mini_5fdos_2eproto,
@@ -945,7 +945,7 @@ const char* Operation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // required .dos.Operation.OperationType operation = 1;
+      // required .dos.Operation.OperationType operation = 1 [default = QUERY];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
@@ -1017,7 +1017,7 @@ failure:
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .dos.Operation.OperationType operation = 1;
+  // required .dos.Operation.OperationType operation = 1 [default = QUERY];
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -1058,7 +1058,7 @@ size_t Operation::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:dos.Operation)
   size_t total_size = 0;
 
-  // required .dos.Operation.OperationType operation = 1;
+  // required .dos.Operation.OperationType operation = 1 [default = QUERY];
   if (_internal_has_operation()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_operation());

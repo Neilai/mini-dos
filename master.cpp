@@ -1,11 +1,11 @@
 #include "utility.h"
-#include<map>
-#include<tuple>
+#include <map>
+#include <tuple>
 using namespace std;
 int main(int argc, char *argv[])
 {
-    GOOGLE_PROTOBUF_VERIFY_VERSION;
-  map<int,tuple<char*,int,int>> socketMap;
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+  map<int, tuple<char *, int, int>> socketMap;
   struct sockaddr_in serverAddr;
   serverAddr.sin_family = PF_INET;
   serverAddr.sin_port = htons(SERVER_PORT);
@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
   static struct epoll_event events[EPOLL_SIZE];
   //往内核事件表里添加事件
   addfd(epfd, listener, true);
-  char message[BUF_SIZE];
   while (1)
   {
     //epoll_events_count表示就绪事件的数目
@@ -56,23 +55,19 @@ int main(int argc, char *argv[])
     for (int i = 0; i < epoll_events_count; ++i)
     {
       int sockfd = events[i].data.fd;
-      printf("events :%d \n",events[i].events);
+      printf("events :%d \n", events[i].events);
+      char *message=new char[BUF_SIZE];
       //新用户连接
       if (sockfd == listener)
       {
         struct sockaddr_in client_address;
         socklen_t client_addrLength = sizeof(struct sockaddr_in);
         int clientfd = accept(listener, (struct sockaddr *)&client_address, &client_addrLength);
-        tuple<char*,int,int> worker(inet_ntoa(client_address.sin_addr),ntohs(client_address.sin_port),0);
-      
-        printf("client connection from: %s : % d(IP : port), clientfd = %d \n",
-              get<0>(worker),
-              get<1>(worker),
-              clientfd);
-        socketMap.insert(pair<int,tuple<char*,int,int>>(clientfd,worker));
+        printf("新连接: %s : % d(IP : port), clientfd = %d \n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port), clientfd);
+
         addfd(epfd, clientfd, true);
       }
-      else if (events[i].events & (EPOLLRDHUP|EPOLLHUP | EPOLLERR))
+      else if (events[i].events & (EPOLLRDHUP | EPOLLHUP | EPOLLERR))
       {
         printf("closing fd %d", events[i].data.fd);
         if (close(events[i].data.fd) == -1)
@@ -80,27 +75,46 @@ int main(int argc, char *argv[])
       }
       else if (events[i].events & EPOLLIN)
       {
+        printf("描述符为%d \n",events[i].data.fd);
         int ret = recv(events[i].data.fd, message, BUF_SIZE, 0);
+        ret = recv(events[i].data.fd, message, BUF_SIZE, 0);
         dos::Operation deserializedOperation;
-        deserializedOperation.ParseFromArray(message,BUF_SIZE);
-        cout<<"deserializedOperation debugString:"<<deserializedOperation.DebugString();
-        
-        printf("ret : %d \n",ret);
-        if(ret!=0){
-          printf("message :%s\n", message);
+        deserializedOperation.ParseFromArray(message, BUF_SIZE);
+        cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
+
+        printf("ret : %d \n", ret);
+        if (ret != 0)
+        {
+          if (deserializedOperation.operation() == 1)
+          {
+            printf("master获取到了worker注册信息");
+            char *ip = "127.0.0.1";
+            tuple<char *, int, int> worker(ip, deserializedOperation.port(), 0);
+
+            printf("worker 信息: %s : % d(IP : port)",
+                   get<0>(worker),
+                   get<1>(worker));
+            socketMap.insert(pair<int, tuple<char *, int, int>>(int(events[i].data.fd), worker));
+          }
+          else if(deserializedOperation.operation() == 0){
+            printf("master获取到了client请求信息"); 
+          }
           continue;
         }
-        map<int,tuple<char*,int,int>>::iterator it;
-        it=socketMap.find(events[i].data.fd);
-        if(it==socketMap.end())
+        map<int, tuple<char *, int, int>>::iterator it;
+        it = socketMap.find(int(events[i].data.fd));
+        if (it == socketMap.end())
           printf("没有找到这个描述符");
-        else{
+        else
+        {
           socketMap.erase(it);
           printf("close !!!");
         }
       }
+    delete [] message;
     }
-    printf("epoll_events_count = %d\nmap size:%d \n", epoll_events_count,socketMap.size());
+    printf("epoll_events_count = %d\nmap size:%d \n", epoll_events_count, socketMap.size());
   }
   return 0;
 }
+
