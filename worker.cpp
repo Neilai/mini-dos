@@ -70,8 +70,6 @@ int main(int argc, char *argv[])
             char *result = new char[BUF_SIZE];
             char *request = new char[BUF_SIZE];
             int sockfd = events[i].data.fd;
-            printf("events :%d \n", events[i].events);
-            //新用户连接
             if (sockfd == listener)
             {
                 struct sockaddr_in client_address;
@@ -93,6 +91,9 @@ int main(int argc, char *argv[])
                 dos::Operation deserializedOperation;
                 deserializedOperation.ParseFromArray(request, BUF_SIZE);
                 cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
+                const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
+                cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
+                cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
                 if (ret != 0)
                 {
                     printf(" 进行计算:%s\n", request);

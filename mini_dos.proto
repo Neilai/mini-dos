@@ -9,6 +9,7 @@ message Operation {
 		DISTRIBUTE = 2;
 		RETURN = 3;
 		FINISH = 4;
+		COMPUTE= 5;
 	}
 
 	required OperationType operation = 1[default=QUERY];

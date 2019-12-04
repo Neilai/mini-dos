@@ -16,11 +16,11 @@ int main(int argc, char* argv[]){
     operation.set_port(8888);
 
     // add a distribute task obj
-    //dos::Operation::DistributeTask* task = operation.add_task();
-    //task->set_operation_num_type("int");
-    //task->set_operation_num_one("1");
-    //task->set_operation_num_two("9999");
-    //task->set_operation_label("+");
+    dos::Operation::DistributeTask* task = operation.add_task();
+    task->set_operation_num_type("int");
+    task->set_operation_num_one("1");
+    task->set_operation_num_two("9999");
+    task->set_operation_label("+");
 
     //  add a result obj
     //dos::Operation::Result* result = operation.add_result();
@@ -29,17 +29,14 @@ int main(int argc, char* argv[]){
 
     // deserialization below
     // serialize class operation to string container
-    string serializedStr;
-    operation.SerializeToString(&serializedStr);
-    cout<<"serialization result:"<<serializedStr<<endl;
+    char *serializedStr[1000];
+    operation.SerializeToArray(serializedStr,1000);
+    //cout<<"serialization result:"<<serializedStr<<endl;
     cout<<endl<<"debugString:\n"<<operation.DebugString();
 
 
     dos::Operation deserializedOperation;
-    if(!deserializedOperation.ParseFromString(serializedStr)){
-        cerr << "Failed to parse student." << endl;
-        return -1;
-    }
+    deserializedOperation.ParseFromArray(serializedStr,1000);
 
     cout<<"-------------上面是序列化，下面是反序列化---------------"<<endl;
     cout<<"deserializedOperation debugString:"<<deserializedOperation.DebugString();
@@ -47,9 +44,9 @@ int main(int argc, char* argv[]){
     cout<<endl<<"Operation Type: " << deserializedOperation.operation() << endl;
     cout<<endl<<"Port ID: " << deserializedOperation.port() << endl;
     //if(deserializedOperation.task_size()) {
-        //const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
-        //cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
-        //cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
+        const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
+        cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
+        cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
     //}
     //if(deserializedOperation.result_size()) {
         //const dos::Operation::Result& result_content = deserializedOperation.result(0);

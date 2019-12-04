@@ -130,7 +130,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_mini_5fdos_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016mini_dos.proto\022\003dos\"\265\003\n\tOperation\0226\n\to"
+  "\n\016mini_dos.proto\022\003dos\"\302\003\n\tOperation\0226\n\to"
   "peration\030\001 \002(\0162\034.dos.Operation.Operation"
   "Type:\005QUERY\022\014\n\004port\030\002 \001(\r\022\n\n\002ip\030\003 \001(\t\022+\n"
   "\004task\030\005 \003(\0132\035.dos.Operation.DistributeTa"
@@ -139,9 +139,9 @@ const char descriptor_table_protodef_mini_5fdos_2eproto[] PROTOBUF_SECTION_VARIA
   "e\030\001 \002(\t\022\031\n\021operation_num_one\030\002 \002(\t\022\031\n\021op"
   "eration_num_two\030\003 \002(\t\022\027\n\017operation_label"
   "\030\004 \002(\t\0323\n\006Result\022\023\n\013result_type\030\001 \002(\t\022\024\n"
-  "\014result_value\030\002 \002(\t\"P\n\rOperationType\022\t\n\005"
+  "\014result_value\030\002 \002(\t\"]\n\rOperationType\022\t\n\005"
   "QUERY\020\000\022\014\n\010REGISTER\020\001\022\016\n\nDISTRIBUTE\020\002\022\n\n"
-  "\006RETURN\020\003\022\n\n\006FINISH\020\004"
+  "\006RETURN\020\003\022\n\n\006FINISH\020\004\022\013\n\007COMPUTE\020\005"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_mini_5fdos_2eproto_deps[1] = {
 };
@@ -153,7 +153,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_min
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_mini_5fdos_2eproto_once;
 static bool descriptor_table_mini_5fdos_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mini_5fdos_2eproto = {
-  &descriptor_table_mini_5fdos_2eproto_initialized, descriptor_table_protodef_mini_5fdos_2eproto, "mini_dos.proto", 461,
+  &descriptor_table_mini_5fdos_2eproto_initialized, descriptor_table_protodef_mini_5fdos_2eproto, "mini_dos.proto", 474,
   &descriptor_table_mini_5fdos_2eproto_once, descriptor_table_mini_5fdos_2eproto_sccs, descriptor_table_mini_5fdos_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_mini_5fdos_2eproto::offsets,
   file_level_metadata_mini_5fdos_2eproto, 3, file_level_enum_descriptors_mini_5fdos_2eproto, file_level_service_descriptors_mini_5fdos_2eproto,
@@ -173,6 +173,7 @@ bool Operation_OperationType_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
       return true;
     default:
       return false;
@@ -185,6 +186,7 @@ constexpr Operation_OperationType Operation::REGISTER;
 constexpr Operation_OperationType Operation::DISTRIBUTE;
 constexpr Operation_OperationType Operation::RETURN;
 constexpr Operation_OperationType Operation::FINISH;
+constexpr Operation_OperationType Operation::COMPUTE;
 constexpr Operation_OperationType Operation::OperationType_MIN;
 constexpr Operation_OperationType Operation::OperationType_MAX;
 constexpr int Operation::OperationType_ARRAYSIZE;

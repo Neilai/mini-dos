@@ -78,11 +78,12 @@ enum Operation_OperationType : int {
   Operation_OperationType_REGISTER = 1,
   Operation_OperationType_DISTRIBUTE = 2,
   Operation_OperationType_RETURN = 3,
-  Operation_OperationType_FINISH = 4
+  Operation_OperationType_FINISH = 4,
+  Operation_OperationType_COMPUTE = 5
 };
 bool Operation_OperationType_IsValid(int value);
 constexpr Operation_OperationType Operation_OperationType_OperationType_MIN = Operation_OperationType_QUERY;
-constexpr Operation_OperationType Operation_OperationType_OperationType_MAX = Operation_OperationType_FINISH;
+constexpr Operation_OperationType Operation_OperationType_OperationType_MAX = Operation_OperationType_COMPUTE;
 constexpr int Operation_OperationType_OperationType_ARRAYSIZE = Operation_OperationType_OperationType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Operation_OperationType_descriptor();
@@ -613,6 +614,8 @@ class Operation :
     Operation_OperationType_RETURN;
   static constexpr OperationType FINISH =
     Operation_OperationType_FINISH;
+  static constexpr OperationType COMPUTE =
+    Operation_OperationType_COMPUTE;
   static inline bool OperationType_IsValid(int value) {
     return Operation_OperationType_IsValid(value);
   }

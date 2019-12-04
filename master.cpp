@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
             dos::Operation operation;
             operation.set_port(get<1>(socketMap[minId]));
             operation.set_ip(get<0>(socketMap[minId]));
-            operation.set_operation(dos::Operation::RETURN);
+            operation.set_operation(dos::Operation::DISTRIBUTE);
             operation.SerializeToArray(message, BUF_SIZE);
             if (send(events[i].data.fd, message, strlen(message), 0) < 0)
               printf("send msg erroro");
