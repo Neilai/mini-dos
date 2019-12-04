@@ -13,21 +13,21 @@ message Operation {
 
 	required OperationType operation = 1[default=QUERY];
 	
-	optional uint32 port = 2 [default = 0];
-	
+	optional uint32 port = 2;
+  optional string ip=3;	
 	message DistributeTask {
 		required string operation_num_type = 1;
 		required string operation_num_one = 2;
 		required string operation_num_two = 3;
 		required string operation_label = 4;
 	}
-	repeated DistributeTask task = 3;
+	optional DistributeTask task = 4;
 	
 	message Result {
 		required string result_type = 1;
 		required string result_value = 2;
 	}
-	repeated Result result = 4;
+	optional Result result =5;
 	
 
 }
