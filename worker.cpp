@@ -94,9 +94,14 @@ int main(int argc, char *argv[])
                 const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
                 cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
                 cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
+
                 if (ret != 0)
                 {
-                    printf(" 进行计算:%s\n", request);
+                    printf(" 进行计算...\n");
+                    if(task_content.operation_num_type()=="int"){
+                        int result=compute<int>(stoi(task_content.operation_num_one()),stoi(task_content.operation_num_two()),task_content.operation_label());
+                        cout<<"计算结果:"<<result<<endl;
+                    }
                     continue;
                 }
             }

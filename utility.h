@@ -21,6 +21,7 @@
 #define WORKER_PORT 8889
 #define EPOLL_SIZE 5000
 #define BUF_SIZE 0xFFFF
+using namespace std;
 int setnonblocking(int sockfd)
 {
     fcntl(sockfd, F_SETFL, fcntl(sockfd, F_GETFD, 0) | O_NONBLOCK);
@@ -43,4 +44,17 @@ void addfd(int epollfd, int fd, bool enable_et)
     setnonblocking(fd);
     noNagle(fd);
     printf("fd added to epoll!\n\n");
+}
+template<typename T>
+T compute(T a, T b,string op)
+{
+    cout<<"进入计算函数"<<endl;
+    if(op[0]=='+')
+      return a + b;
+    else if(op[0]=='-')
+      return a-b;
+    else if(op[0]=='*')
+      return a*b;
+    else if(op[0]=='/')
+      return a/b;
 }
