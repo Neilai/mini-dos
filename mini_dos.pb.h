@@ -641,12 +641,48 @@ class Operation :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kTaskFieldNumber = 5,
+    kResultFieldNumber = 6,
     kIpFieldNumber = 3,
-    kTaskFieldNumber = 4,
-    kResultFieldNumber = 5,
     kOperationFieldNumber = 1,
     kPortFieldNumber = 2,
   };
+  // repeated .dos.Operation.DistributeTask task = 5;
+  int task_size() const;
+  private:
+  int _internal_task_size() const;
+  public:
+  void clear_task();
+  ::dos::Operation_DistributeTask* mutable_task(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >*
+      mutable_task();
+  private:
+  const ::dos::Operation_DistributeTask& _internal_task(int index) const;
+  ::dos::Operation_DistributeTask* _internal_add_task();
+  public:
+  const ::dos::Operation_DistributeTask& task(int index) const;
+  ::dos::Operation_DistributeTask* add_task();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >&
+      task() const;
+
+  // repeated .dos.Operation.Result result = 6;
+  int result_size() const;
+  private:
+  int _internal_result_size() const;
+  public:
+  void clear_result();
+  ::dos::Operation_Result* mutable_result(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >*
+      mutable_result();
+  private:
+  const ::dos::Operation_Result& _internal_result(int index) const;
+  ::dos::Operation_Result* _internal_add_result();
+  public:
+  const ::dos::Operation_Result& result(int index) const;
+  ::dos::Operation_Result* add_result();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >&
+      result() const;
+
   // optional string ip = 3;
   bool has_ip() const;
   private:
@@ -665,36 +701,6 @@ class Operation :
   const std::string& _internal_ip() const;
   void _internal_set_ip(const std::string& value);
   std::string* _internal_mutable_ip();
-  public:
-
-  // optional .dos.Operation.DistributeTask task = 4;
-  bool has_task() const;
-  private:
-  bool _internal_has_task() const;
-  public:
-  void clear_task();
-  const ::dos::Operation_DistributeTask& task() const;
-  ::dos::Operation_DistributeTask* release_task();
-  ::dos::Operation_DistributeTask* mutable_task();
-  void set_allocated_task(::dos::Operation_DistributeTask* task);
-  private:
-  const ::dos::Operation_DistributeTask& _internal_task() const;
-  ::dos::Operation_DistributeTask* _internal_mutable_task();
-  public:
-
-  // optional .dos.Operation.Result result = 5;
-  bool has_result() const;
-  private:
-  bool _internal_has_result() const;
-  public:
-  void clear_result();
-  const ::dos::Operation_Result& result() const;
-  ::dos::Operation_Result* release_result();
-  ::dos::Operation_Result* mutable_result();
-  void set_allocated_result(::dos::Operation_Result* result);
-  private:
-  const ::dos::Operation_Result& _internal_result() const;
-  ::dos::Operation_Result* _internal_mutable_result();
   public:
 
   // required .dos.Operation.OperationType operation = 1 [default = QUERY];
@@ -730,9 +736,9 @@ class Operation :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask > task_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result > result_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
-  ::dos::Operation_DistributeTask* task_;
-  ::dos::Operation_Result* result_;
   int operation_;
   ::PROTOBUF_NAMESPACE_ID::uint32 port_;
   friend struct ::TableStruct_mini_5fdos_2eproto;
@@ -1184,7 +1190,7 @@ inline void Operation_Result::set_allocated_result_value(std::string* result_val
 
 // required .dos.Operation.OperationType operation = 1 [default = QUERY];
 inline bool Operation::_internal_has_operation() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool Operation::has_operation() const {
@@ -1192,7 +1198,7 @@ inline bool Operation::has_operation() const {
 }
 inline void Operation::clear_operation() {
   operation_ = 0;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline ::dos::Operation_OperationType Operation::_internal_operation() const {
   return static_cast< ::dos::Operation_OperationType >(operation_);
@@ -1203,7 +1209,7 @@ inline ::dos::Operation_OperationType Operation::operation() const {
 }
 inline void Operation::_internal_set_operation(::dos::Operation_OperationType value) {
   assert(::dos::Operation_OperationType_IsValid(value));
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000002u;
   operation_ = value;
 }
 inline void Operation::set_operation(::dos::Operation_OperationType value) {
@@ -1213,7 +1219,7 @@ inline void Operation::set_operation(::dos::Operation_OperationType value) {
 
 // optional uint32 port = 2;
 inline bool Operation::_internal_has_port() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool Operation::has_port() const {
@@ -1221,7 +1227,7 @@ inline bool Operation::has_port() const {
 }
 inline void Operation::clear_port() {
   port_ = 0u;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Operation::_internal_port() const {
   return port_;
@@ -1231,7 +1237,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Operation::port() const {
   return _internal_port();
 }
 inline void Operation::_internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000004u;
   port_ = value;
 }
 inline void Operation::set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1310,124 +1316,82 @@ inline void Operation::set_allocated_ip(std::string* ip) {
   // @@protoc_insertion_point(field_set_allocated:dos.Operation.ip)
 }
 
-// optional .dos.Operation.DistributeTask task = 4;
-inline bool Operation::_internal_has_task() const {
-  bool value = (_has_bits_[0] & 0x00000002u) != 0;
-  PROTOBUF_ASSUME(!value || task_ != nullptr);
-  return value;
+// repeated .dos.Operation.DistributeTask task = 5;
+inline int Operation::_internal_task_size() const {
+  return task_.size();
 }
-inline bool Operation::has_task() const {
-  return _internal_has_task();
+inline int Operation::task_size() const {
+  return _internal_task_size();
 }
 inline void Operation::clear_task() {
-  if (task_ != nullptr) task_->Clear();
-  _has_bits_[0] &= ~0x00000002u;
+  task_.Clear();
 }
-inline const ::dos::Operation_DistributeTask& Operation::_internal_task() const {
-  const ::dos::Operation_DistributeTask* p = task_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::dos::Operation_DistributeTask*>(
-      &::dos::_Operation_DistributeTask_default_instance_);
+inline ::dos::Operation_DistributeTask* Operation::mutable_task(int index) {
+  // @@protoc_insertion_point(field_mutable:dos.Operation.task)
+  return task_.Mutable(index);
 }
-inline const ::dos::Operation_DistributeTask& Operation::task() const {
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >*
+Operation::mutable_task() {
+  // @@protoc_insertion_point(field_mutable_list:dos.Operation.task)
+  return &task_;
+}
+inline const ::dos::Operation_DistributeTask& Operation::_internal_task(int index) const {
+  return task_.Get(index);
+}
+inline const ::dos::Operation_DistributeTask& Operation::task(int index) const {
   // @@protoc_insertion_point(field_get:dos.Operation.task)
-  return _internal_task();
+  return _internal_task(index);
 }
-inline ::dos::Operation_DistributeTask* Operation::release_task() {
-  // @@protoc_insertion_point(field_release:dos.Operation.task)
-  _has_bits_[0] &= ~0x00000002u;
-  ::dos::Operation_DistributeTask* temp = task_;
-  task_ = nullptr;
-  return temp;
+inline ::dos::Operation_DistributeTask* Operation::_internal_add_task() {
+  return task_.Add();
 }
-inline ::dos::Operation_DistributeTask* Operation::_internal_mutable_task() {
-  _has_bits_[0] |= 0x00000002u;
-  if (task_ == nullptr) {
-    auto* p = CreateMaybeMessage<::dos::Operation_DistributeTask>(GetArenaNoVirtual());
-    task_ = p;
-  }
+inline ::dos::Operation_DistributeTask* Operation::add_task() {
+  // @@protoc_insertion_point(field_add:dos.Operation.task)
+  return _internal_add_task();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_DistributeTask >&
+Operation::task() const {
+  // @@protoc_insertion_point(field_list:dos.Operation.task)
   return task_;
 }
-inline ::dos::Operation_DistributeTask* Operation::mutable_task() {
-  // @@protoc_insertion_point(field_mutable:dos.Operation.task)
-  return _internal_mutable_task();
-}
-inline void Operation::set_allocated_task(::dos::Operation_DistributeTask* task) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete task_;
-  }
-  if (task) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      task = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, task, submessage_arena);
-    }
-    _has_bits_[0] |= 0x00000002u;
-  } else {
-    _has_bits_[0] &= ~0x00000002u;
-  }
-  task_ = task;
-  // @@protoc_insertion_point(field_set_allocated:dos.Operation.task)
-}
 
-// optional .dos.Operation.Result result = 5;
-inline bool Operation::_internal_has_result() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
-  PROTOBUF_ASSUME(!value || result_ != nullptr);
-  return value;
+// repeated .dos.Operation.Result result = 6;
+inline int Operation::_internal_result_size() const {
+  return result_.size();
 }
-inline bool Operation::has_result() const {
-  return _internal_has_result();
+inline int Operation::result_size() const {
+  return _internal_result_size();
 }
 inline void Operation::clear_result() {
-  if (result_ != nullptr) result_->Clear();
-  _has_bits_[0] &= ~0x00000004u;
+  result_.Clear();
 }
-inline const ::dos::Operation_Result& Operation::_internal_result() const {
-  const ::dos::Operation_Result* p = result_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::dos::Operation_Result*>(
-      &::dos::_Operation_Result_default_instance_);
-}
-inline const ::dos::Operation_Result& Operation::result() const {
-  // @@protoc_insertion_point(field_get:dos.Operation.result)
-  return _internal_result();
-}
-inline ::dos::Operation_Result* Operation::release_result() {
-  // @@protoc_insertion_point(field_release:dos.Operation.result)
-  _has_bits_[0] &= ~0x00000004u;
-  ::dos::Operation_Result* temp = result_;
-  result_ = nullptr;
-  return temp;
-}
-inline ::dos::Operation_Result* Operation::_internal_mutable_result() {
-  _has_bits_[0] |= 0x00000004u;
-  if (result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::dos::Operation_Result>(GetArenaNoVirtual());
-    result_ = p;
-  }
-  return result_;
-}
-inline ::dos::Operation_Result* Operation::mutable_result() {
+inline ::dos::Operation_Result* Operation::mutable_result(int index) {
   // @@protoc_insertion_point(field_mutable:dos.Operation.result)
-  return _internal_mutable_result();
+  return result_.Mutable(index);
 }
-inline void Operation::set_allocated_result(::dos::Operation_Result* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    _has_bits_[0] |= 0x00000004u;
-  } else {
-    _has_bits_[0] &= ~0x00000004u;
-  }
-  result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:dos.Operation.result)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >*
+Operation::mutable_result() {
+  // @@protoc_insertion_point(field_mutable_list:dos.Operation.result)
+  return &result_;
+}
+inline const ::dos::Operation_Result& Operation::_internal_result(int index) const {
+  return result_.Get(index);
+}
+inline const ::dos::Operation_Result& Operation::result(int index) const {
+  // @@protoc_insertion_point(field_get:dos.Operation.result)
+  return _internal_result(index);
+}
+inline ::dos::Operation_Result* Operation::_internal_add_result() {
+  return result_.Add();
+}
+inline ::dos::Operation_Result* Operation::add_result() {
+  // @@protoc_insertion_point(field_add:dos.Operation.result)
+  return _internal_add_result();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dos::Operation_Result >&
+Operation::result() const {
+  // @@protoc_insertion_point(field_list:dos.Operation.result)
+  return result_;
 }
 
 #ifdef __GNUC__

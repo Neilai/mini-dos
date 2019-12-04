@@ -3,7 +3,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     GOOGLE_PROTOBUF_VERIFY_VERSION;
-    struct sockaddr_in serverAddr,workerAddr;
+    struct sockaddr_in serverAddr, workerAddr;
     serverAddr.sin_family = PF_INET;
     serverAddr.sin_port = htons(SERVER_PORT);
     serverAddr.sin_addr.s_addr = inet_addr(SERVER_IP);
@@ -12,19 +12,16 @@ int main(int argc, char *argv[])
 
     // 创建socket
     dos::Operation operation;
-    dos::Operation deserializedOperation;
     operation.set_port(WORKER_PORT);
     operation.set_operation(dos::Operation::REGISTER);
-    operation.SerializeToArray(message,BUF_SIZE);
-    deserializedOperation.ParseFromArray(message,BUF_SIZE);
-    cout<<"deserializedOperation debugString:"<<deserializedOperation.DebugString();
+    operation.SerializeToArray(message, BUF_SIZE);
     int sock = socket(PF_INET, SOCK_STREAM, 0);
     if (connect(sock, (struct sockaddr *)&serverAddr, sizeof(serverAddr)) < 0)
     {
         perror("connect error");
         exit(-1);
     }
-    if (send(sock, message,strlen(message), 0) < 0)
+    if (send(sock, message, strlen(message), 0) < 0)
     {
         printf("send msg erroro");
         return 0;
@@ -57,7 +54,6 @@ int main(int argc, char *argv[])
     static struct epoll_event events[EPOLL_SIZE];
     //往内核事件表里添加事件
     addfd(epfd, listener, true);
-    char request[BUF_SIZE];
     while (1)
     {
         //epoll_events_count表示就绪事件的数目
@@ -71,6 +67,8 @@ int main(int argc, char *argv[])
         //处理这epoll_events_count个就绪事件
         for (int i = 0; i < epoll_events_count; ++i)
         {
+            char *result = new char[BUF_SIZE];
+            char *request = new char[BUF_SIZE];
             int sockfd = events[i].data.fd;
             printf("events :%d \n", events[i].events);
             //新用户连接
@@ -91,13 +89,18 @@ int main(int argc, char *argv[])
             else if (events[i].events & EPOLLIN)
             {
                 int ret = recv(events[i].data.fd, request, BUF_SIZE, 0);
-                //printf("ret : %d \n",ret!=0);
+                printf("ret : %d \n",ret);
+                dos::Operation deserializedOperation;
+                deserializedOperation.ParseFromArray(request, BUF_SIZE);
+                cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
                 if (ret != 0)
                 {
                     printf(" 进行计算:%s\n", request);
                     continue;
                 }
             }
+            delete[] result;
+            delete[] request;
         }
     }
 }

@@ -111,11 +111,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_mini_5fdos_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::dos::Operation, ip_),
   PROTOBUF_FIELD_OFFSET(::dos::Operation, task_),
   PROTOBUF_FIELD_OFFSET(::dos::Operation, result_),
-  3,
-  4,
-  0,
   1,
   2,
+  0,
+  ~0u,
+  ~0u,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 9, sizeof(::dos::Operation_DistributeTask)},
@@ -133,8 +133,8 @@ const char descriptor_table_protodef_mini_5fdos_2eproto[] PROTOBUF_SECTION_VARIA
   "\n\016mini_dos.proto\022\003dos\"\265\003\n\tOperation\0226\n\to"
   "peration\030\001 \002(\0162\034.dos.Operation.Operation"
   "Type:\005QUERY\022\014\n\004port\030\002 \001(\r\022\n\n\002ip\030\003 \001(\t\022+\n"
-  "\004task\030\004 \001(\0132\035.dos.Operation.DistributeTa"
-  "sk\022%\n\006result\030\005 \001(\0132\025.dos.Operation.Resul"
+  "\004task\030\005 \003(\0132\035.dos.Operation.DistributeTa"
+  "sk\022%\n\006result\030\006 \003(\0132\025.dos.Operation.Resul"
   "t\032{\n\016DistributeTask\022\032\n\022operation_num_typ"
   "e\030\001 \002(\t\022\031\n\021operation_num_one\030\002 \002(\t\022\031\n\021op"
   "eration_num_two\030\003 \002(\t\022\027\n\017operation_label"
@@ -867,41 +867,21 @@ void Operation_Result::InternalSwap(Operation_Result* other) {
 // ===================================================================
 
 void Operation::InitAsDefaultInstance() {
-  ::dos::_Operation_default_instance_._instance.get_mutable()->task_ = const_cast< ::dos::Operation_DistributeTask*>(
-      ::dos::Operation_DistributeTask::internal_default_instance());
-  ::dos::_Operation_default_instance_._instance.get_mutable()->result_ = const_cast< ::dos::Operation_Result*>(
-      ::dos::Operation_Result::internal_default_instance());
 }
 class Operation::_Internal {
  public:
   using HasBits = decltype(std::declval<Operation>()._has_bits_);
   static void set_has_operation(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
+    (*has_bits)[0] |= 2u;
   }
   static void set_has_port(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
+    (*has_bits)[0] |= 4u;
   }
   static void set_has_ip(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static const ::dos::Operation_DistributeTask& task(const Operation* msg);
-  static void set_has_task(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static const ::dos::Operation_Result& result(const Operation* msg);
-  static void set_has_result(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
 };
 
-const ::dos::Operation_DistributeTask&
-Operation::_Internal::task(const Operation* msg) {
-  return *msg->task_;
-}
-const ::dos::Operation_Result&
-Operation::_Internal::result(const Operation* msg) {
-  return *msg->result_;
-}
 Operation::Operation()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -910,21 +890,13 @@ Operation::Operation()
 Operation::Operation(const Operation& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
+      _has_bits_(from._has_bits_),
+      task_(from.task_),
+      result_(from.result_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from._internal_has_ip()) {
     ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_);
-  }
-  if (from._internal_has_task()) {
-    task_ = new ::dos::Operation_DistributeTask(*from.task_);
-  } else {
-    task_ = nullptr;
-  }
-  if (from._internal_has_result()) {
-    result_ = new ::dos::Operation_Result(*from.result_);
-  } else {
-    result_ = nullptr;
   }
   ::memcpy(&operation_, &from.operation_,
     static_cast<size_t>(reinterpret_cast<char*>(&port_) -
@@ -935,9 +907,9 @@ Operation::Operation(const Operation& from)
 void Operation::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Operation_mini_5fdos_2eproto.base);
   ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&task_, 0, static_cast<size_t>(
+  ::memset(&operation_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&port_) -
-      reinterpret_cast<char*>(&task_)) + sizeof(port_));
+      reinterpret_cast<char*>(&operation_)) + sizeof(port_));
 }
 
 Operation::~Operation() {
@@ -947,8 +919,6 @@ Operation::~Operation() {
 
 void Operation::SharedDtor() {
   ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete task_;
-  if (this != internal_default_instance()) delete result_;
 }
 
 void Operation::SetCachedSize(int size) const {
@@ -966,21 +936,13 @@ void Operation::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  task_.Clear();
+  result_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      ip_.ClearNonDefaultToEmptyNoArena();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(task_ != nullptr);
-      task_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(result_ != nullptr);
-      result_->Clear();
-    }
+  if (cached_has_bits & 0x00000001u) {
+    ip_.ClearNonDefaultToEmptyNoArena();
   }
-  if (cached_has_bits & 0x00000018u) {
+  if (cached_has_bits & 0x00000006u) {
     ::memset(&operation_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&port_) -
         reinterpret_cast<char*>(&operation_)) + sizeof(port_));
@@ -1028,18 +990,28 @@ const char* Operation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional .dos.Operation.DistributeTask task = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_task(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // optional .dos.Operation.Result result = 5;
+      // repeated .dos.Operation.DistributeTask task = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_result(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_task(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated .dos.Operation.Result result = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_result(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1071,14 +1043,14 @@ failure:
 
   cached_has_bits = _has_bits_[0];
   // required .dos.Operation.OperationType operation = 1 [default = QUERY];
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_operation(), target);
   }
 
   // optional uint32 port = 2;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_port(), target);
   }
@@ -1093,20 +1065,20 @@ failure:
         3, this->_internal_ip(), target);
   }
 
-  // optional .dos.Operation.DistributeTask task = 4;
-  if (cached_has_bits & 0x00000002u) {
+  // repeated .dos.Operation.DistributeTask task = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_task_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::task(this), target, stream);
+      InternalWriteMessage(5, this->_internal_task(i), target, stream);
   }
 
-  // optional .dos.Operation.Result result = 5;
-  if (cached_has_bits & 0x00000004u) {
+  // repeated .dos.Operation.Result result = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_result_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::result(this), target, stream);
+      InternalWriteMessage(6, this->_internal_result(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1130,32 +1102,30 @@ size_t Operation::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    // optional string ip = 3;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_ip());
-    }
-
-    // optional .dos.Operation.DistributeTask task = 4;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *task_);
-    }
-
-    // optional .dos.Operation.Result result = 5;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *result_);
-    }
-
+  // repeated .dos.Operation.DistributeTask task = 5;
+  total_size += 1UL * this->_internal_task_size();
+  for (const auto& msg : this->task_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
+  // repeated .dos.Operation.Result result = 6;
+  total_size += 1UL * this->_internal_result_size();
+  for (const auto& msg : this->result_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // optional string ip = 3;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_ip());
+  }
+
   // optional uint32 port = 2;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000004u) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_port());
@@ -1192,22 +1162,18 @@ void Operation::MergeFrom(const Operation& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  task_.MergeFrom(from.task_);
+  result_.MergeFrom(from.result_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       _has_bits_[0] |= 0x00000001u;
       ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_);
     }
     if (cached_has_bits & 0x00000002u) {
-      _internal_mutable_task()->::dos::Operation_DistributeTask::MergeFrom(from._internal_task());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _internal_mutable_result()->::dos::Operation_Result::MergeFrom(from._internal_result());
-    }
-    if (cached_has_bits & 0x00000008u) {
       operation_ = from.operation_;
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000004u) {
       port_ = from.port_;
     }
     _has_bits_[0] |= cached_has_bits;
@@ -1229,13 +1195,9 @@ void Operation::CopyFrom(const Operation& from) {
 }
 
 bool Operation::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000008) != 0x00000008) return false;
-  if (_internal_has_task()) {
-    if (!task_->IsInitialized()) return false;
-  }
-  if (_internal_has_result()) {
-    if (!result_->IsInitialized()) return false;
-  }
+  if ((_has_bits_[0] & 0x00000002) != 0x00000002) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(task_)) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(result_)) return false;
   return true;
 }
 
@@ -1243,10 +1205,10 @@ void Operation::InternalSwap(Operation* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
+  task_.InternalSwap(&other->task_);
+  result_.InternalSwap(&other->result_);
   ip_.Swap(&other->ip_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(task_, other->task_);
-  swap(result_, other->result_);
   swap(operation_, other->operation_);
   swap(port_, other->port_);
 }

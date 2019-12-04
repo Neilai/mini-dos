@@ -21,14 +21,13 @@ message Operation {
 		required string operation_num_two = 3;
 		required string operation_label = 4;
 	}
-	optional DistributeTask task = 4;
+	repeated DistributeTask task = 5;
 	
 	message Result {
 		required string result_type = 1;
 		required string result_value = 2;
 	}
-	optional Result result =5;
-	
+	repeated Result result =6;
 
 }
 

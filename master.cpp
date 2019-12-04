@@ -107,7 +107,14 @@ int main(int argc, char *argv[])
                 minId = it->first;
               it++;
             }
-            printf("分配描述符%d ip:%s port:%d\n",minId, get<0>(socketMap[minId]),get<1>(socketMap[minId]));
+            printf("分配描述符%d ip:%s port:%d\n", minId, get<0>(socketMap[minId]), get<1>(socketMap[minId]));
+            dos::Operation operation;
+            operation.set_port(get<1>(socketMap[minId]));
+            operation.set_ip(get<0>(socketMap[minId]));
+            operation.set_operation(dos::Operation::RETURN);
+            operation.SerializeToArray(message, BUF_SIZE);
+            if (send(events[i].data.fd, message, strlen(message), 0) < 0)
+              printf("send msg erroro");
           }
           continue;
         }
@@ -127,5 +134,4 @@ int main(int argc, char *argv[])
   }
   return 0;
 }
-
 
