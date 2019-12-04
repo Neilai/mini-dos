@@ -1,5 +1,6 @@
 #include "utility.h"
 #include <cstdlib>
+using namespace std;
 int main(int argc, char *argv[])
 {
     struct sockaddr_in serverAddr, workerAddr;
@@ -7,14 +8,14 @@ int main(int argc, char *argv[])
     serverAddr.sin_port = htons(SERVER_PORT);
     serverAddr.sin_addr.s_addr = inet_addr(SERVER_IP);
 
-    const char *query = "client询问\n";
+    string query="client 询问";
     int sockMaster = socket(PF_INET, SOCK_STREAM, 0);
     if (connect(sockMaster, (struct sockaddr *)&serverAddr, sizeof(serverAddr)) < 0)
     {
         perror("connect error");
         exit(-1);
     }
-    if (send(sockMaster, query, strlen(query), 0) < 0)
+    if (send(sockMaster, query.c_str(), query.size(), 0) < 0)
     {
         printf("send msg erroro");
         return 0;

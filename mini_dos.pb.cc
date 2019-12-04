@@ -137,8 +137,8 @@ const char descriptor_table_protodef_mini_5fdos_2eproto[] PROTOBUF_SECTION_VARIA
   "tion_num_one\030\002 \002(\t\022\031\n\021operation_num_two\030"
   "\003 \002(\t\022\027\n\017operation_label\030\004 \002(\t\0323\n\006Result"
   "\022\023\n\013result_type\030\001 \002(\t\022\024\n\014result_value\030\002 "
-  "\002(\t\"P\n\rOperationType\022\014\n\010REGISTER\020\000\022\t\n\005QU"
-  "ERY\020\001\022\016\n\nDISTRIBUTE\020\002\022\n\n\006RETURN\020\003\022\n\n\006FIN"
+  "\002(\t\"P\n\rOperationType\022\t\n\005QUERY\020\000\022\014\n\010REGIS"
+  "TER\020\001\022\016\n\nDISTRIBUTE\020\002\022\n\n\006RETURN\020\003\022\n\n\006FIN"
   "ISH\020\004"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_mini_5fdos_2eproto_deps[1] = {
@@ -178,8 +178,8 @@ bool Operation_OperationType_IsValid(int value) {
 }
 
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-constexpr Operation_OperationType Operation::REGISTER;
 constexpr Operation_OperationType Operation::QUERY;
+constexpr Operation_OperationType Operation::REGISTER;
 constexpr Operation_OperationType Operation::DISTRIBUTE;
 constexpr Operation_OperationType Operation::RETURN;
 constexpr Operation_OperationType Operation::FINISH;

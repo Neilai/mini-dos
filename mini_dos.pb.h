@@ -74,14 +74,14 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace dos {
 
 enum Operation_OperationType : int {
-  Operation_OperationType_REGISTER = 0,
-  Operation_OperationType_QUERY = 1,
+  Operation_OperationType_QUERY = 0,
+  Operation_OperationType_REGISTER = 1,
   Operation_OperationType_DISTRIBUTE = 2,
   Operation_OperationType_RETURN = 3,
   Operation_OperationType_FINISH = 4
 };
 bool Operation_OperationType_IsValid(int value);
-constexpr Operation_OperationType Operation_OperationType_OperationType_MIN = Operation_OperationType_REGISTER;
+constexpr Operation_OperationType Operation_OperationType_OperationType_MIN = Operation_OperationType_QUERY;
 constexpr Operation_OperationType Operation_OperationType_OperationType_MAX = Operation_OperationType_FINISH;
 constexpr int Operation_OperationType_OperationType_ARRAYSIZE = Operation_OperationType_OperationType_MAX + 1;
 
@@ -603,10 +603,10 @@ class Operation :
   typedef Operation_Result Result;
 
   typedef Operation_OperationType OperationType;
-  static constexpr OperationType REGISTER =
-    Operation_OperationType_REGISTER;
   static constexpr OperationType QUERY =
     Operation_OperationType_QUERY;
+  static constexpr OperationType REGISTER =
+    Operation_OperationType_REGISTER;
   static constexpr OperationType DISTRIBUTE =
     Operation_OperationType_DISTRIBUTE;
   static constexpr OperationType RETURN =

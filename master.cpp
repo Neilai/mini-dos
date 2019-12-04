@@ -4,6 +4,7 @@
 using namespace std;
 int main(int argc, char *argv[])
 {
+    GOOGLE_PROTOBUF_VERIFY_VERSION;
   map<int,tuple<char*,int,int>> socketMap;
   struct sockaddr_in serverAddr;
   serverAddr.sin_family = PF_INET;
@@ -80,7 +81,11 @@ int main(int argc, char *argv[])
       else if (events[i].events & EPOLLIN)
       {
         int ret = recv(events[i].data.fd, message, BUF_SIZE, 0);
-        //printf("ret : %d \n",ret!=0);
+        dos::Operation deserializedOperation;
+        deserializedOperation.ParseFromArray(message,BUF_SIZE);
+        cout<<"deserializedOperation debugString:"<<deserializedOperation.DebugString();
+        
+        printf("ret : %d \n",ret);
         if(ret!=0){
           printf("message :%s\n", message);
           continue;

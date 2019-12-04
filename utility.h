@@ -10,7 +10,9 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include<string>
+#include<string.h>
+#include "mini_dos.pb.h"
 
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 8888

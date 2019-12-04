@@ -1,0 +1,1821 @@
+Makefile:6: 目标“worker”不匹配目标模式
+Makefile:7: warning: overriding recipe for target `worker'
+Makefile:5: warning: ignoring old recipe for target `worker'
+Makefile:6: 目标“master”不匹配目标模式
+Makefile:7: warning: overriding recipe for target `master'
+Makefile:5: warning: ignoring old recipe for target `master'
+Makefile:6: 目标“client”不匹配目标模式
+Makefile:7: warning: overriding recipe for target `client'
+Makefile:5: warning: ignoring old recipe for target `client'
+g++    -c -o worker.o worker.cpp
+In file included from /usr/include/c++/4.8.2/atomic:38:0,
+                 from /usr/local/include/google/protobuf/io/coded_stream.h:115,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/include/c++/4.8.2/bits/c++0x_warning.h:32:2: 错误：#error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+In file included from /usr/local/include/google/protobuf/stubs/common.h:46:0,
+                 from /usr/local/include/google/protobuf/io/coded_stream.h:141,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/stubs/port.h:114:2: 错误：#error "Protobuf requires at least C++11."
+ #error "Protobuf requires at least C++11."
+  ^
+In file included from /usr/include/c++/4.8.2/atomic:41:0,
+                 from /usr/local/include/google/protobuf/io/coded_stream.h:115,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/include/c++/4.8.2/bits/atomic_base.h:70:3: 错误：‘constexpr’不是一个类型名
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:70:3: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:76:3: 错误：‘constexpr’不是一个类型名
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:76:3: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:83:3: 错误：‘constexpr’不是一个类型名
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:83:3: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:90:3: 错误：‘constexpr’不是一个类型名
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:90:3: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:98:41: 错误：expected initializer before ‘noexcept’
+   atomic_thread_fence(memory_order __m) noexcept
+                                         ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:102:41: 错误：expected initializer before ‘noexcept’
+   atomic_signal_fence(memory_order __m) noexcept
+                                         ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:108:30: 错误：expected initializer before ‘noexcept’
+     kill_dependency(_Tp __y) noexcept
+                              ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:156:25: 错误：‘char16_t’在此作用域中尚未声明
+   typedef __atomic_base<char16_t>    atomic_char16_t;
+                         ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:156:33: 错误：模板第 1 个参数无效
+   typedef __atomic_base<char16_t>    atomic_char16_t;
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:156:53: 错误：invalid type in declaration before ‘;’ token
+   typedef __atomic_base<char16_t>    atomic_char16_t;
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:159:25: 错误：‘char32_t’在此作用域中尚未声明
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                         ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:159:33: 错误：模板第 1 个参数无效
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:159:53: 错误：invalid type in declaration before ‘;’ token
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:162:25: 错误：‘char32_t’在此作用域中尚未声明
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                         ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:162:33: 错误：模板第 1 个参数无效
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:162:53: 错误：invalid type in declaration before ‘;’ token
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:273:17: 错误：expected ‘;’ at end of member declaration
+     atomic_flag() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:273:19: 错误：‘noexcept’不是一个类型名
+     atomic_flag() noexcept = default;
+                   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:274:18: 错误：expected ‘;’ at end of member declaration
+     ~atomic_flag() noexcept = default;
+                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:274:20: 错误：‘noexcept’不是一个类型名
+     ~atomic_flag() noexcept = default;
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:280:5: 错误：‘constexpr’不是一个类型名
+     constexpr atomic_flag(bool __i) noexcept
+     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:280:5: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:282:5: 错误：expected unqualified-id before ‘{’ token
+     { }
+     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:285:57: 错误：expected ‘;’ at end of member declaration
+     test_and_set(memory_order __m = memory_order_seq_cst) noexcept
+                                                         ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:285:59: 错误：‘noexcept’不是一个类型名
+     test_and_set(memory_order __m = memory_order_seq_cst) noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:291:59: 错误：expected ‘;’ at end of member declaration
+     test_and_set(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:291:68: 错误：‘noexcept’不是一个类型名
+     test_and_set(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:297:50: 错误：expected ‘;’ at end of member declaration
+     clear(memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:297:52: 错误：‘noexcept’不是一个类型名
+     clear(memory_order __m = memory_order_seq_cst) noexcept
+                                                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:308:52: 错误：expected ‘;’ at end of member declaration
+     clear(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:308:61: 错误：‘noexcept’不是一个类型名
+     clear(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:319:12: 错误：‘constexpr’不是一个类型名
+     static constexpr __atomic_flag_data_type
+            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:319:12: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:357:21: 错误：expected ‘;’ at end of member declaration
+       __atomic_base() noexcept = default;
+                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:357:23: 错误：‘noexcept’不是一个类型名
+       __atomic_base() noexcept = default;
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:358:22: 错误：expected ‘;’ at end of member declaration
+       ~__atomic_base() noexcept = default;
+                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:358:24: 错误：‘noexcept’不是一个类型名
+       ~__atomic_base() noexcept = default;
+                        ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:364:7: 错误：‘constexpr’不是一个类型名
+       constexpr __atomic_base(__int_type __i) noexcept : _M_i (__i) { }
+       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:364:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:366:29: 错误：expected ‘;’ at end of member declaration
+       operator __int_type() const noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:366:35: 错误：‘noexcept’不是一个类型名
+       operator __int_type() const noexcept
+                                   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:369:35: 错误：expected ‘;’ at end of member declaration
+       operator __int_type() const volatile noexcept
+                                   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:369:44: 错误：‘noexcept’不是一个类型名
+       operator __int_type() const volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:373:31: 错误：expected ‘;’ at end of member declaration
+       operator=(__int_type __i) noexcept
+                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:373:33: 错误：‘noexcept’不是一个类型名
+       operator=(__int_type __i) noexcept
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:380:33: 错误：expected ‘;’ at end of member declaration
+       operator=(__int_type __i) volatile noexcept
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:380:42: 错误：‘noexcept’不是一个类型名
+       operator=(__int_type __i) volatile noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:387:21: 错误：expected ‘;’ at end of member declaration
+       operator++(int) noexcept
+                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:387:23: 错误：‘noexcept’不是一个类型名
+       operator++(int) noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:391:23: 错误：expected ‘;’ at end of member declaration
+       operator++(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:391:32: 错误：‘noexcept’不是一个类型名
+       operator++(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:395:21: 错误：expected ‘;’ at end of member declaration
+       operator--(int) noexcept
+                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:395:23: 错误：‘noexcept’不是一个类型名
+       operator--(int) noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:399:23: 错误：expected ‘;’ at end of member declaration
+       operator--(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:399:32: 错误：‘noexcept’不是一个类型名
+       operator--(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:403:18: 错误：expected ‘;’ at end of member declaration
+       operator++() noexcept
+                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:403:20: 错误：‘noexcept’不是一个类型名
+       operator++() noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:407:20: 错误：expected ‘;’ at end of member declaration
+       operator++() volatile noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:407:29: 错误：‘noexcept’不是一个类型名
+       operator++() volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:411:18: 错误：expected ‘;’ at end of member declaration
+       operator--() noexcept
+                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:411:20: 错误：‘noexcept’不是一个类型名
+       operator--() noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:415:20: 错误：expected ‘;’ at end of member declaration
+       operator--() volatile noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:415:29: 错误：‘noexcept’不是一个类型名
+       operator--() volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:419:32: 错误：expected ‘;’ at end of member declaration
+       operator+=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:419:34: 错误：‘noexcept’不是一个类型名
+       operator+=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:423:34: 错误：expected ‘;’ at end of member declaration
+       operator+=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:423:43: 错误：‘noexcept’不是一个类型名
+       operator+=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:427:32: 错误：expected ‘;’ at end of member declaration
+       operator-=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:427:34: 错误：‘noexcept’不是一个类型名
+       operator-=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:431:34: 错误：expected ‘;’ at end of member declaration
+       operator-=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:431:43: 错误：‘noexcept’不是一个类型名
+       operator-=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:435:32: 错误：expected ‘;’ at end of member declaration
+       operator&=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:435:34: 错误：‘noexcept’不是一个类型名
+       operator&=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:439:34: 错误：expected ‘;’ at end of member declaration
+       operator&=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:439:43: 错误：‘noexcept’不是一个类型名
+       operator&=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:443:32: 错误：expected ‘;’ at end of member declaration
+       operator|=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:443:34: 错误：‘noexcept’不是一个类型名
+       operator|=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:447:34: 错误：expected ‘;’ at end of member declaration
+       operator|=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:447:43: 错误：‘noexcept’不是一个类型名
+       operator|=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:451:32: 错误：expected ‘;’ at end of member declaration
+       operator^=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:451:34: 错误：‘noexcept’不是一个类型名
+       operator^=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:455:34: 错误：expected ‘;’ at end of member declaration
+       operator^=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:455:43: 错误：‘noexcept’不是一个类型名
+       operator^=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:459:22: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:459:28: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:463:28: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:463:37: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:467:68: 错误：expected ‘;’ at end of member declaration
+       store(__int_type __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:467:70: 错误：‘noexcept’不是一个类型名
+       store(__int_type __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:479:47: 错误：expected ‘;’ at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:479:56: 错误：‘noexcept’不是一个类型名
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:490:53: 错误：expected ‘;’ at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:490:59: 错误：‘noexcept’不是一个类型名
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:500:59: 错误：expected ‘;’ at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:500:68: 错误：‘noexcept’不是一个类型名
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:511:48: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:511:50: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:519:50: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:519:59: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:526:44: 错误：expected ‘;’ at end of member declaration
+        memory_order __m1, memory_order __m2) noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:526:46: 错误：‘noexcept’不是一个类型名
+        memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:540:27: 错误：expected ‘;’ at end of member declaration
+        memory_order __m2) volatile noexcept
+                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:540:36: 错误：‘noexcept’不是一个类型名
+        memory_order __m2) volatile noexcept
+                                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:553:47: 错误：expected ‘;’ at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:553:49: 错误：‘noexcept’不是一个类型名
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:561:47: 错误：expected ‘;’ at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:561:56: 错误：‘noexcept’不是一个类型名
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:569:46: 错误：expected ‘;’ at end of member declaration
+          memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:569:48: 错误：‘noexcept’不是一个类型名
+          memory_order __m1, memory_order __m2) noexcept
+                                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:583:29: 错误：expected ‘;’ at end of member declaration
+          memory_order __m2) volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:583:38: 错误：‘noexcept’不是一个类型名
+          memory_order __m2) volatile noexcept
+                                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:597:49: 错误：expected ‘;’ at end of member declaration
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:597:51: 错误：‘noexcept’不是一个类型名
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:605:45: 错误：expected ‘;’ at end of member declaration
+    memory_order __m = memory_order_seq_cst) volatile noexcept
+                                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:605:54: 错误：‘noexcept’不是一个类型名
+    memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:613:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:613:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:618:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:618:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:623:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:623:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:628:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:628:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:633:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:633:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:638:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:638:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:643:48: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:643:50: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:648:50: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:648:59: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:653:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:653:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:658:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:658:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:673:7: 错误：‘constexpr’不是一个类型名
+       constexpr ptrdiff_t
+       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:673:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:676:7: 错误：‘constexpr’不是一个类型名
+       constexpr ptrdiff_t
+       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:676:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:680:21: 错误：expected ‘;’ at end of member declaration
+       __atomic_base() noexcept = default;
+                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:680:23: 错误：‘noexcept’不是一个类型名
+       __atomic_base() noexcept = default;
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:681:22: 错误：expected ‘;’ at end of member declaration
+       ~__atomic_base() noexcept = default;
+                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:681:24: 错误：‘noexcept’不是一个类型名
+       ~__atomic_base() noexcept = default;
+                        ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:687:7: 错误：‘constexpr’不是一个类型名
+       constexpr __atomic_base(__pointer_type __p) noexcept : _M_p (__p) { }
+       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:687:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/bits/atomic_base.h:689:33: 错误：expected ‘;’ at end of member declaration
+       operator __pointer_type() const noexcept
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:689:39: 错误：‘noexcept’不是一个类型名
+       operator __pointer_type() const noexcept
+                                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:692:39: 错误：expected ‘;’ at end of member declaration
+       operator __pointer_type() const volatile noexcept
+                                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:692:48: 错误：‘noexcept’不是一个类型名
+       operator __pointer_type() const volatile noexcept
+                                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:696:35: 错误：expected ‘;’ at end of member declaration
+       operator=(__pointer_type __p) noexcept
+                                   ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:696:37: 错误：‘noexcept’不是一个类型名
+       operator=(__pointer_type __p) noexcept
+                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:703:37: 错误：expected ‘;’ at end of member declaration
+       operator=(__pointer_type __p) volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:703:46: 错误：‘noexcept’不是一个类型名
+       operator=(__pointer_type __p) volatile noexcept
+                                              ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:710:21: 错误：expected ‘;’ at end of member declaration
+       operator++(int) noexcept
+                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:710:23: 错误：‘noexcept’不是一个类型名
+       operator++(int) noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:714:23: 错误：expected ‘;’ at end of member declaration
+       operator++(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:714:32: 错误：‘noexcept’不是一个类型名
+       operator++(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:718:21: 错误：expected ‘;’ at end of member declaration
+       operator--(int) noexcept
+                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:718:23: 错误：‘noexcept’不是一个类型名
+       operator--(int) noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:722:23: 错误：expected ‘;’ at end of member declaration
+       operator--(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:722:32: 错误：‘noexcept’不是一个类型名
+       operator--(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:726:18: 错误：expected ‘;’ at end of member declaration
+       operator++() noexcept
+                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:726:20: 错误：‘noexcept’不是一个类型名
+       operator++() noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:731:20: 错误：expected ‘;’ at end of member declaration
+       operator++() volatile noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:731:29: 错误：‘noexcept’不是一个类型名
+       operator++() volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:736:18: 错误：expected ‘;’ at end of member declaration
+       operator--() noexcept
+                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:736:20: 错误：‘noexcept’不是一个类型名
+       operator--() noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:741:20: 错误：expected ‘;’ at end of member declaration
+       operator--() volatile noexcept
+                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:741:29: 错误：‘noexcept’不是一个类型名
+       operator--() volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:746:31: 错误：expected ‘;’ at end of member declaration
+       operator+=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:746:33: 错误：‘noexcept’不是一个类型名
+       operator+=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:751:33: 错误：expected ‘;’ at end of member declaration
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:751:42: 错误：‘noexcept’不是一个类型名
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:756:31: 错误：expected ‘;’ at end of member declaration
+       operator-=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:756:33: 错误：‘noexcept’不是一个类型名
+       operator-=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:761:33: 错误：expected ‘;’ at end of member declaration
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:761:42: 错误：‘noexcept’不是一个类型名
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:766:22: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:766:28: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:770:28: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:770:37: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:775:45: 错误：expected ‘;’ at end of member declaration
+      memory_order __m = memory_order_seq_cst) noexcept
+                                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:775:47: 错误：‘noexcept’不是一个类型名
+      memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:788:47: 错误：expected ‘;’ at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:788:56: 错误：‘noexcept’不是一个类型名
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:799:53: 错误：expected ‘;’ at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:799:59: 错误：‘noexcept’不是一个类型名
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:809:59: 错误：expected ‘;’ at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:809:68: 错误：‘noexcept’不是一个类型名
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:820:48: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:820:50: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:828:50: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:828:59: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:836:27: 错误：expected ‘;’ at end of member declaration
+          memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:836:29: 错误：‘noexcept’不是一个类型名
+          memory_order __m2) noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:850:29: 错误：expected ‘;’ at end of member declaration
+          memory_order __m2) volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:850:38: 错误：‘noexcept’不是一个类型名
+          memory_order __m2) volatile noexcept
+                                      ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:864:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:864:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:869:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:869:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:874:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:874:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:879:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/bits/atomic_base.h:879:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+In file included from /usr/local/include/google/protobuf/io/coded_stream.h:115:0,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/include/c++/4.8.2/atomic:60:17: 错误：expected ‘;’ at end of member declaration
+     atomic_bool() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:60:19: 错误：‘noexcept’不是一个类型名
+     atomic_bool() noexcept = default;
+                   ^
+/usr/include/c++/4.8.2/atomic:61:18: 错误：expected ‘;’ at end of member declaration
+     ~atomic_bool() noexcept = default;
+                  ^
+/usr/include/c++/4.8.2/atomic:61:20: 错误：‘noexcept’不是一个类型名
+     ~atomic_bool() noexcept = default;
+                    ^
+/usr/include/c++/4.8.2/atomic:66:5: 错误：‘constexpr’不是一个类型名
+     constexpr atomic_bool(bool __i) noexcept : _M_base(__i) { }
+     ^
+/usr/include/c++/4.8.2/atomic:66:5: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:69:23: 错误：expected ‘;’ at end of member declaration
+     operator=(bool __i) noexcept
+                       ^
+/usr/include/c++/4.8.2/atomic:69:25: 错误：‘noexcept’不是一个类型名
+     operator=(bool __i) noexcept
+                         ^
+/usr/include/c++/4.8.2/atomic:73:25: 错误：expected ‘;’ at end of member declaration
+     operator=(bool __i) volatile noexcept
+                         ^
+/usr/include/c++/4.8.2/atomic:73:34: 错误：‘noexcept’不是一个类型名
+     operator=(bool __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8.2/atomic:76:21: 错误：expected ‘;’ at end of member declaration
+     operator bool() const noexcept
+                     ^
+/usr/include/c++/4.8.2/atomic:76:27: 错误：‘noexcept’不是一个类型名
+     operator bool() const noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:79:27: 错误：expected ‘;’ at end of member declaration
+     operator bool() const volatile noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:79:36: 错误：‘noexcept’不是一个类型名
+     operator bool() const volatile noexcept
+                                    ^
+/usr/include/c++/4.8.2/atomic:83:20: 错误：expected ‘;’ at end of member declaration
+     is_lock_free() const noexcept { return _M_base.is_lock_free(); }
+                    ^
+/usr/include/c++/4.8.2/atomic:83:26: 错误：‘noexcept’不是一个类型名
+     is_lock_free() const noexcept { return _M_base.is_lock_free(); }
+                          ^
+/usr/include/c++/4.8.2/atomic:86:26: 错误：expected ‘;’ at end of member declaration
+     is_lock_free() const volatile noexcept { return _M_base.is_lock_free(); }
+                          ^
+/usr/include/c++/4.8.2/atomic:86:35: 错误：‘noexcept’不是一个类型名
+     is_lock_free() const volatile noexcept { return _M_base.is_lock_free(); }
+                                   ^
+/usr/include/c++/4.8.2/atomic:89:60: 错误：expected ‘;’ at end of member declaration
+     store(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                            ^
+/usr/include/c++/4.8.2/atomic:89:62: 错误：‘noexcept’不是一个类型名
+     store(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                              ^
+/usr/include/c++/4.8.2/atomic:93:62: 错误：expected ‘;’ at end of member declaration
+     store(bool __i, memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                              ^
+/usr/include/c++/4.8.2/atomic:93:71: 错误：‘noexcept’不是一个类型名
+     store(bool __i, memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                                       ^
+/usr/include/c++/4.8.2/atomic:97:51: 错误：expected ‘;’ at end of member declaration
+     load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                   ^
+/usr/include/c++/4.8.2/atomic:97:57: 错误：‘noexcept’不是一个类型名
+     load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:101:57: 错误：expected ‘;’ at end of member declaration
+     load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:101:66: 错误：‘noexcept’不是一个类型名
+     load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                  ^
+/usr/include/c++/4.8.2/atomic:105:63: 错误：expected ‘;’ at end of member declaration
+     exchange(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                               ^
+/usr/include/c++/4.8.2/atomic:105:65: 错误：‘noexcept’不是一个类型名
+     exchange(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                                 ^
+/usr/include/c++/4.8.2/atomic:110:48: 错误：expected ‘;’ at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:110:57: 错误：‘noexcept’不是一个类型名
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:115:23: 错误：expected ‘;’ at end of member declaration
+      memory_order __m2) noexcept
+                       ^
+/usr/include/c++/4.8.2/atomic:115:25: 错误：‘noexcept’不是一个类型名
+      memory_order __m2) noexcept
+                         ^
+/usr/include/c++/4.8.2/atomic:120:25: 错误：expected ‘;’ at end of member declaration
+      memory_order __m2) volatile noexcept
+                         ^
+/usr/include/c++/4.8.2/atomic:120:34: 错误：‘noexcept’不是一个类型名
+      memory_order __m2) volatile noexcept
+                                  ^
+/usr/include/c++/4.8.2/atomic:125:45: 错误：expected ‘;’ at end of member declaration
+      memory_order __m = memory_order_seq_cst) noexcept
+                                             ^
+/usr/include/c++/4.8.2/atomic:125:47: 错误：‘noexcept’不是一个类型名
+      memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8.2/atomic:130:49: 错误：expected ‘;’ at end of member declaration
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:130:58: 错误：‘noexcept’不是一个类型名
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:135:25: 错误：expected ‘;’ at end of member declaration
+        memory_order __m2) noexcept
+                         ^
+/usr/include/c++/4.8.2/atomic:135:27: 错误：‘noexcept’不是一个类型名
+        memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:140:27: 错误：expected ‘;’ at end of member declaration
+        memory_order __m2) volatile noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:140:36: 错误：‘noexcept’不是一个类型名
+        memory_order __m2) volatile noexcept
+                                    ^
+/usr/include/c++/4.8.2/atomic:145:47: 错误：expected ‘;’ at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8.2/atomic:145:49: 错误：‘noexcept’不是一个类型名
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:150:48: 错误：expected ‘;’ at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:150:57: 错误：‘noexcept’不是一个类型名
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:167:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:167:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:168:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:168:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:173:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(_Tp __i) noexcept : _M_i(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:173:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:175:22: 错误：expected ‘;’ at end of member declaration
+       operator _Tp() const noexcept
+                      ^
+/usr/include/c++/4.8.2/atomic:175:28: 错误：‘noexcept’不是一个类型名
+       operator _Tp() const noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:178:28: 错误：expected ‘;’ at end of member declaration
+       operator _Tp() const volatile noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:178:37: 错误：‘noexcept’不是一个类型名
+       operator _Tp() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/atomic:182:24: 错误：expected ‘;’ at end of member declaration
+       operator=(_Tp __i) noexcept 
+                        ^
+/usr/include/c++/4.8.2/atomic:182:26: 错误：‘noexcept’不是一个类型名
+       operator=(_Tp __i) noexcept 
+                          ^
+/usr/include/c++/4.8.2/atomic:186:26: 错误：expected ‘;’ at end of member declaration
+       operator=(_Tp __i) volatile noexcept 
+                          ^
+/usr/include/c++/4.8.2/atomic:186:35: 错误：‘noexcept’不是一个类型名
+       operator=(_Tp __i) volatile noexcept 
+                                   ^
+/usr/include/c++/4.8.2/atomic:190:22: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8.2/atomic:190:28: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:194:28: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:194:37: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/atomic:198:60: 错误：expected ‘;’ at end of member declaration
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                            ^
+/usr/include/c++/4.8.2/atomic:198:62: 错误：‘noexcept’不是一个类型名
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                              ^
+/usr/include/c++/4.8.2/atomic:202:62: 错误：expected ‘;’ at end of member declaration
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                              ^
+/usr/include/c++/4.8.2/atomic:202:71: 错误：‘noexcept’不是一个类型名
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                                       ^
+/usr/include/c++/4.8.2/atomic:206:52: 错误：expected ‘;’ at end of member declaration
+       load(memory_order _m = memory_order_seq_cst) const noexcept
+                                                    ^
+/usr/include/c++/4.8.2/atomic:206:58: 错误：‘noexcept’不是一个类型名
+       load(memory_order _m = memory_order_seq_cst) const noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:214:58: 错误：expected ‘;’ at end of member declaration
+       load(memory_order _m = memory_order_seq_cst) const volatile noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:214:67: 错误：‘noexcept’不是一个类型名
+       load(memory_order _m = memory_order_seq_cst) const volatile noexcept
+                                                                   ^
+/usr/include/c++/4.8.2/atomic:222:63: 错误：expected ‘;’ at end of member declaration
+       exchange(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                               ^
+/usr/include/c++/4.8.2/atomic:222:65: 错误：‘noexcept’不是一个类型名
+       exchange(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                                 ^
+/usr/include/c++/4.8.2/atomic:231:49: 错误：expected ‘;’ at end of member declaration
+         memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:231:58: 错误：‘noexcept’不是一个类型名
+         memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:240:24: 错误：expected ‘;’ at end of member declaration
+        memory_order __f) noexcept
+                        ^
+/usr/include/c++/4.8.2/atomic:240:26: 错误：‘noexcept’不是一个类型名
+        memory_order __f) noexcept
+                          ^
+/usr/include/c++/4.8.2/atomic:247:26: 错误：expected ‘;’ at end of member declaration
+        memory_order __f) volatile noexcept
+                          ^
+/usr/include/c++/4.8.2/atomic:247:35: 错误：‘noexcept’不是一个类型名
+        memory_order __f) volatile noexcept
+                                   ^
+/usr/include/c++/4.8.2/atomic:254:47: 错误：expected ‘;’ at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8.2/atomic:254:49: 错误：‘noexcept’不是一个类型名
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:259:49: 错误：expected ‘;’ at end of member declaration
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:259:58: 错误：‘noexcept’不是一个类型名
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:264:26: 错误：expected ‘;’ at end of member declaration
+          memory_order __f) noexcept
+                          ^
+/usr/include/c++/4.8.2/atomic:264:28: 错误：‘noexcept’不是一个类型名
+          memory_order __f) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:271:28: 错误：expected ‘;’ at end of member declaration
+          memory_order __f) volatile noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:271:37: 错误：‘noexcept’不是一个类型名
+          memory_order __f) volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/atomic:278:50: 错误：expected ‘;’ at end of member declaration
+           memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/atomic:278:52: 错误：‘noexcept’不是一个类型名
+           memory_order __m = memory_order_seq_cst) noexcept
+                                                    ^
+/usr/include/c++/4.8.2/atomic:283:49: 错误：expected ‘;’ at end of member declaration
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:283:58: 错误：‘noexcept’不是一个类型名
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:296:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:296:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:297:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:297:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:302:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__pointer_type __p) noexcept : _M_b(__p) { }
+       ^
+/usr/include/c++/4.8.2/atomic:302:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:304:33: 错误：expected ‘;’ at end of member declaration
+       operator __pointer_type() const noexcept
+                                 ^
+/usr/include/c++/4.8.2/atomic:304:39: 错误：‘noexcept’不是一个类型名
+       operator __pointer_type() const noexcept
+                                       ^
+/usr/include/c++/4.8.2/atomic:307:39: 错误：expected ‘;’ at end of member declaration
+       operator __pointer_type() const volatile noexcept
+                                       ^
+/usr/include/c++/4.8.2/atomic:307:48: 错误：‘noexcept’不是一个类型名
+       operator __pointer_type() const volatile noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:311:35: 错误：expected ‘;’ at end of member declaration
+       operator=(__pointer_type __p) noexcept
+                                   ^
+/usr/include/c++/4.8.2/atomic:311:37: 错误：‘noexcept’不是一个类型名
+       operator=(__pointer_type __p) noexcept
+                                     ^
+/usr/include/c++/4.8.2/atomic:315:37: 错误：expected ‘;’ at end of member declaration
+       operator=(__pointer_type __p) volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/atomic:315:46: 错误：‘noexcept’不是一个类型名
+       operator=(__pointer_type __p) volatile noexcept
+                                              ^
+/usr/include/c++/4.8.2/atomic:319:21: 错误：expected ‘;’ at end of member declaration
+       operator++(int) noexcept
+                     ^
+/usr/include/c++/4.8.2/atomic:319:23: 错误：‘noexcept’不是一个类型名
+       operator++(int) noexcept
+                       ^
+/usr/include/c++/4.8.2/atomic:323:23: 错误：expected ‘;’ at end of member declaration
+       operator++(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8.2/atomic:323:32: 错误：‘noexcept’不是一个类型名
+       operator++(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8.2/atomic:327:21: 错误：expected ‘;’ at end of member declaration
+       operator--(int) noexcept
+                     ^
+/usr/include/c++/4.8.2/atomic:327:23: 错误：‘noexcept’不是一个类型名
+       operator--(int) noexcept
+                       ^
+/usr/include/c++/4.8.2/atomic:331:23: 错误：expected ‘;’ at end of member declaration
+       operator--(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8.2/atomic:331:32: 错误：‘noexcept’不是一个类型名
+       operator--(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8.2/atomic:335:18: 错误：expected ‘;’ at end of member declaration
+       operator++() noexcept
+                  ^
+/usr/include/c++/4.8.2/atomic:335:20: 错误：‘noexcept’不是一个类型名
+       operator++() noexcept
+                    ^
+/usr/include/c++/4.8.2/atomic:339:20: 错误：expected ‘;’ at end of member declaration
+       operator++() volatile noexcept
+                    ^
+/usr/include/c++/4.8.2/atomic:339:29: 错误：‘noexcept’不是一个类型名
+       operator++() volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/atomic:343:18: 错误：expected ‘;’ at end of member declaration
+       operator--() noexcept
+                  ^
+/usr/include/c++/4.8.2/atomic:343:20: 错误：‘noexcept’不是一个类型名
+       operator--() noexcept
+                    ^
+/usr/include/c++/4.8.2/atomic:347:20: 错误：expected ‘;’ at end of member declaration
+       operator--() volatile noexcept
+                    ^
+/usr/include/c++/4.8.2/atomic:347:29: 错误：‘noexcept’不是一个类型名
+       operator--() volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/atomic:351:31: 错误：expected ‘;’ at end of member declaration
+       operator+=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8.2/atomic:351:33: 错误：‘noexcept’不是一个类型名
+       operator+=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8.2/atomic:355:33: 错误：expected ‘;’ at end of member declaration
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8.2/atomic:355:42: 错误：‘noexcept’不是一个类型名
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8.2/atomic:359:31: 错误：expected ‘;’ at end of member declaration
+       operator-=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8.2/atomic:359:33: 错误：‘noexcept’不是一个类型名
+       operator-=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8.2/atomic:363:33: 错误：expected ‘;’ at end of member declaration
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8.2/atomic:363:42: 错误：‘noexcept’不是一个类型名
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8.2/atomic:367:22: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8.2/atomic:367:28: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:371:28: 错误：expected ‘;’ at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:371:37: 错误：‘noexcept’不是一个类型名
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8.2/atomic:376:45: 错误：expected ‘;’ at end of member declaration
+      memory_order __m = memory_order_seq_cst) noexcept
+                                             ^
+/usr/include/c++/4.8.2/atomic:376:47: 错误：‘noexcept’不是一个类型名
+      memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8.2/atomic:381:47: 错误：expected ‘;’ at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8.2/atomic:381:56: 错误：‘noexcept’不是一个类型名
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8.2/atomic:385:53: 错误：expected ‘;’ at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                     ^
+/usr/include/c++/4.8.2/atomic:385:59: 错误：‘noexcept’不是一个类型名
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                           ^
+/usr/include/c++/4.8.2/atomic:389:59: 错误：expected ‘;’ at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/atomic:389:68: 错误：‘noexcept’不是一个类型名
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8.2/atomic:394:48: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:394:50: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/atomic:399:50: 错误：expected ‘;’ at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8.2/atomic:399:59: 错误：‘noexcept’不是一个类型名
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8.2/atomic:404:44: 错误：expected ‘;’ at end of member declaration
+        memory_order __m1, memory_order __m2) noexcept
+                                            ^
+/usr/include/c++/4.8.2/atomic:404:46: 错误：‘noexcept’不是一个类型名
+        memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8.2/atomic:410:27: 错误：expected ‘;’ at end of member declaration
+        memory_order __m2) volatile noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:410:36: 错误：‘noexcept’不是一个类型名
+        memory_order __m2) volatile noexcept
+                                    ^
+/usr/include/c++/4.8.2/atomic:415:47: 错误：expected ‘;’ at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8.2/atomic:415:49: 错误：‘noexcept’不是一个类型名
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:423:48: 错误：expected ‘;’ at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:423:57: 错误：‘noexcept’不是一个类型名
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:431:46: 错误：expected ‘;’ at end of member declaration
+          memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8.2/atomic:431:48: 错误：‘noexcept’不是一个类型名
+          memory_order __m1, memory_order __m2) noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:437:29: 错误：expected ‘;’ at end of member declaration
+          memory_order __m2) volatile noexcept
+                             ^
+/usr/include/c++/4.8.2/atomic:437:38: 错误：‘noexcept’不是一个类型名
+          memory_order __m2) volatile noexcept
+                                      ^
+/usr/include/c++/4.8.2/atomic:442:49: 错误：expected ‘;’ at end of member declaration
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8.2/atomic:442:51: 错误：‘noexcept’不是一个类型名
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                   ^
+/usr/include/c++/4.8.2/atomic:450:48: 错误：expected ‘;’ at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:450:57: 错误：‘noexcept’不是一个类型名
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:458:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/atomic:458:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/atomic:463:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/atomic:463:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8.2/atomic:468:42: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8.2/atomic:468:44: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8.2/atomic:473:44: 错误：expected ‘;’ at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8.2/atomic:473:53: 错误：‘noexcept’不是一个类型名
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8.2/atomic:485:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:485:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:486:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:486:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:491:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:491:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:504:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:504:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:505:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:505:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:510:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:510:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:523:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept= default;
+              ^
+/usr/include/c++/4.8.2/atomic:523:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept= default;
+                ^
+/usr/include/c++/4.8.2/atomic:524:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:524:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:529:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:529:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:542:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept= default;
+              ^
+/usr/include/c++/4.8.2/atomic:542:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept= default;
+                ^
+/usr/include/c++/4.8.2/atomic:543:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:543:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:548:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:548:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:561:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:561:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:562:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:562:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:567:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:567:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:580:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:580:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:581:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:581:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:586:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:586:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:599:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:599:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:600:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:600:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:605:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:605:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:618:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:618:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:619:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:619:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:624:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:624:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:637:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:637:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:638:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:638:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:643:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:643:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:656:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:656:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:657:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:657:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:662:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:662:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:675:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:675:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:676:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:676:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:681:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:681:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:694:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:694:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:695:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:695:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:700:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:700:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:713:14: 错误：expected ‘;’ at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8.2/atomic:713:16: 错误：‘noexcept’不是一个类型名
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8.2/atomic:714:15: 错误：expected ‘;’ at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8.2/atomic:714:17: 错误：‘noexcept’不是一个类型名
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8.2/atomic:719:7: 错误：‘constexpr’不是一个类型名
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8.2/atomic:719:7: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8.2/atomic:727:19: 错误：‘char16_t’在此作用域中尚未声明
+     struct atomic<char16_t> : public atomic_char16_t
+                   ^
+/usr/include/c++/4.8.2/atomic:727:27: 错误：模板第 1 个参数无效
+     struct atomic<char16_t> : public atomic_char16_t
+                           ^
+/usr/include/c++/4.8.2/atomic:728:5: 错误：expected class-name before ‘{’ token
+     {
+     ^
+/usr/include/c++/4.8.2/atomic:746:19: 错误：‘char32_t’在此作用域中尚未声明
+     struct atomic<char32_t> : public atomic_char32_t
+                   ^
+/usr/include/c++/4.8.2/atomic:746:27: 错误：模板第 1 个参数无效
+     struct atomic<char32_t> : public atomic_char32_t
+                           ^
+/usr/include/c++/4.8.2/atomic:747:5: 错误：expected class-name before ‘{’ token
+     {
+     ^
+/usr/include/c++/4.8.2/atomic:767:27: 错误：expected initializer before ‘noexcept’
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:772:27: 错误：expected initializer before ‘noexcept’
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:776:66: 错误：expected initializer before ‘noexcept’
+   atomic_flag_clear_explicit(atomic_flag* __a, memory_order __m) noexcept
+                                                                  ^
+/usr/include/c++/4.8.2/atomic:781:27: 错误：expected initializer before ‘noexcept’
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:785:46: 错误：expected initializer before ‘noexcept’
+   atomic_flag_test_and_set(atomic_flag* __a) noexcept
+                                              ^
+/usr/include/c++/4.8.2/atomic:789:55: 错误：expected initializer before ‘noexcept’
+   atomic_flag_test_and_set(volatile atomic_flag* __a) noexcept
+                                                       ^
+/usr/include/c++/4.8.2/atomic:793:39: 错误：expected initializer before ‘noexcept’
+   atomic_flag_clear(atomic_flag* __a) noexcept
+                                       ^
+/usr/include/c++/4.8.2/atomic:797:48: 错误：expected initializer before ‘noexcept’
+   atomic_flag_clear(volatile atomic_flag* __a) noexcept
+                                                ^
+/usr/include/c++/4.8.2/atomic:804:50: 错误：expected initializer before ‘noexcept’
+     atomic_is_lock_free(const atomic<_ITp>* __a) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/atomic:809:59: 错误：expected initializer before ‘noexcept’
+     atomic_is_lock_free(const volatile atomic<_ITp>* __a) noexcept
+                                                           ^
+/usr/include/c++/4.8.2/atomic:814:46: 错误：expected initializer before ‘noexcept’
+     atomic_init(atomic<_ITp>* __a, _ITp __i) noexcept;
+                                              ^
+/usr/include/c++/4.8.2/atomic:818:55: 错误：expected initializer before ‘noexcept’
+     atomic_init(volatile atomic<_ITp>* __a, _ITp __i) noexcept;
+                                                       ^
+/usr/include/c++/4.8.2/atomic:823:24: 错误：expected initializer before ‘noexcept’
+      memory_order __m) noexcept
+                        ^
+/usr/include/c++/4.8.2/atomic:829:24: 错误：expected initializer before ‘noexcept’
+      memory_order __m) noexcept
+                        ^
+/usr/include/c++/4.8.2/atomic:834:69: 错误：expected initializer before ‘noexcept’
+     atomic_load_explicit(const atomic<_ITp>* __a, memory_order __m) noexcept
+                                                                     ^
+/usr/include/c++/4.8.2/atomic:840:23: 错误：expected initializer before ‘noexcept’
+     memory_order __m) noexcept
+                       ^
+/usr/include/c++/4.8.2/atomic:846:27: 错误：expected initializer before ‘noexcept’
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:852:27: 错误：expected initializer before ‘noexcept’
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:860:27: 错误：expected initializer before ‘noexcept’
+        memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:868:27: 错误：expected initializer before ‘noexcept’
+        memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:876:29: 错误：expected initializer before ‘noexcept’
+          memory_order __m2) noexcept
+                             ^
+/usr/include/c++/4.8.2/atomic:884:29: 错误：expected initializer before ‘noexcept’
+          memory_order __m2) noexcept
+                             ^
+/usr/include/c++/4.8.2/atomic:890:47: 错误：expected initializer before ‘noexcept’
+     atomic_store(atomic<_ITp>* __a, _ITp __i) noexcept
+                                               ^
+/usr/include/c++/4.8.2/atomic:895:56: 错误：expected initializer before ‘noexcept’
+     atomic_store(volatile atomic<_ITp>* __a, _ITp __i) noexcept
+                                                        ^
+/usr/include/c++/4.8.2/atomic:900:42: 错误：expected initializer before ‘noexcept’
+     atomic_load(const atomic<_ITp>* __a) noexcept
+                                          ^
+/usr/include/c++/4.8.2/atomic:905:51: 错误：expected initializer before ‘noexcept’
+     atomic_load(const volatile atomic<_ITp>* __a) noexcept
+                                                   ^
+/usr/include/c++/4.8.2/atomic:910:50: 错误：expected initializer before ‘noexcept’
+     atomic_exchange(atomic<_ITp>* __a, _ITp __i) noexcept
+                                                  ^
+/usr/include/c++/4.8.2/atomic:915:59: 错误：expected initializer before ‘noexcept’
+     atomic_exchange(volatile atomic<_ITp>* __a, _ITp __i) noexcept
+                                                           ^
+/usr/include/c++/4.8.2/atomic:921:29: 错误：expected initializer before ‘noexcept’
+      _ITp* __i1, _ITp __i2) noexcept
+                             ^
+/usr/include/c++/4.8.2/atomic:931:29: 错误：expected initializer before ‘noexcept’
+      _ITp* __i1, _ITp __i2) noexcept
+                             ^
+/usr/include/c++/4.8.2/atomic:941:31: 错误：expected initializer before ‘noexcept’
+        _ITp* __i1, _ITp __i2) noexcept
+                               ^
+/usr/include/c++/4.8.2/atomic:951:31: 错误：expected initializer before ‘noexcept’
+        _ITp* __i1, _ITp __i2) noexcept
+                               ^
+/usr/include/c++/4.8.2/atomic:965:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:971:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:977:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:983:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:989:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:995:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:1001:27: 错误：expected initializer before ‘noexcept’
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:1007:27: 错误：expected initializer before ‘noexcept’
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8.2/atomic:1013:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:1019:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:1024:58: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_add(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:1029:67: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_add(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8.2/atomic:1034:58: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_sub(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:1039:67: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_sub(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8.2/atomic:1044:58: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_and(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:1049:67: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_and(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8.2/atomic:1054:57: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_or(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:1059:66: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_or(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                  ^
+/usr/include/c++/4.8.2/atomic:1064:58: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_xor(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8.2/atomic:1069:67: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_xor(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8.2/atomic:1077:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:1083:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:1088:66: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_add(volatile atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                                  ^
+/usr/include/c++/4.8.2/atomic:1093:57: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_add(atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                         ^
+/usr/include/c++/4.8.2/atomic:1099:43: 错误：expected initializer before ‘noexcept’
+          ptrdiff_t __d, memory_order __m) noexcept
+                                           ^
+/usr/include/c++/4.8.2/atomic:1105:28: 错误：expected initializer before ‘noexcept’
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8.2/atomic:1110:66: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_sub(volatile atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                                  ^
+/usr/include/c++/4.8.2/atomic:1115:57: 错误：expected initializer before ‘noexcept’
+     atomic_fetch_sub(atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                         ^
+In file included from /usr/local/include/google/protobuf/io/coded_stream.h:141:0,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/stubs/common.h: 在函数‘void google::protobuf::internal::StrongReference(const T&)’中:
+/usr/local/include/google/protobuf/stubs/common.h:167:17: 错误：‘unused’不是一个类型名
+   auto volatile unused = &var;
+                 ^
+/usr/local/include/google/protobuf/stubs/common.h:168:10: 错误：‘unused’在此作用域中尚未声明
+   (void)&unused;  // Use address to avoid an extra load of "unused".
+          ^
+In file included from /usr/local/include/google/protobuf/io/coded_stream.h:142:0,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/stubs/logging.h: 在函数‘T* google::protobuf::internal::CheckNotNull(const char*, int, const char*, T*)’中:
+/usr/local/include/google/protobuf/stubs/logging.h:167:14: 错误：‘nullptr’在此作用域中尚未声明
+   if (val == nullptr) {
+              ^
+In file included from /usr/local/include/google/protobuf/stubs/stringpiece.h:152:0,
+                 from /usr/local/include/google/protobuf/stubs/strutil.h:39,
+                 from /usr/local/include/google/protobuf/io/coded_stream.h:143,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/stubs/hash.h: 在全局域：
+/usr/local/include/google/protobuf/stubs/hash.h:51:31: 错误：expected template-name before ‘<’ token
+ struct hash : public std::hash<Key> {};
+                               ^
+/usr/local/include/google/protobuf/stubs/hash.h:51:31: 错误：expected ‘{’ before ‘<’ token
+/usr/local/include/google/protobuf/stubs/hash.h:51:31: 错误：expected unqualified-id before ‘<’ token
+In file included from /usr/local/include/google/protobuf/stubs/strutil.h:39:0,
+                 from /usr/local/include/google/protobuf/io/coded_stream.h:143,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/stubs/stringpiece.h: 在构造函数‘google::protobuf::StringPiece::StringPiece()’中:
+/usr/local/include/google/protobuf/stubs/stringpiece.h:212:24: 错误：‘nullptr’在此作用域中尚未声明
+   StringPiece() : ptr_(nullptr), length_(0) {}
+                        ^
+/usr/local/include/google/protobuf/stubs/stringpiece.h: 在构造函数‘google::protobuf::StringPiece::StringPiece(const char*)’中:
+/usr/local/include/google/protobuf/stubs/stringpiece.h:216:16: 错误：‘nullptr’在此作用域中尚未声明
+     if (str != nullptr) {
+                ^
+/usr/local/include/google/protobuf/stubs/stringpiece.h: 在成员函数‘void google::protobuf::StringPiece::clear()’中:
+/usr/local/include/google/protobuf/stubs/stringpiece.h:253:12: 错误：‘nullptr’在此作用域中尚未声明
+     ptr_ = nullptr;
+            ^
+/usr/local/include/google/protobuf/stubs/stringpiece.h: 在成员函数‘void google::protobuf::StringPiece::set(const char*)’中:
+/usr/local/include/google/protobuf/stubs/stringpiece.h:265:16: 错误：‘nullptr’在此作用域中尚未声明
+     if (str != nullptr)
+                ^
+/usr/local/include/google/protobuf/stubs/stringpiece.h: 在成员函数‘std::string google::protobuf::StringPiece::ToString() const’中:
+/usr/local/include/google/protobuf/stubs/stringpiece.h:314:17: 错误：‘nullptr’在此作用域中尚未声明
+     if (ptr_ == nullptr) return string();
+                 ^
+In file included from /usr/local/include/google/protobuf/stubs/common.h:47:0,
+                 from /usr/local/include/google/protobuf/io/coded_stream.h:141,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/stubs/strutil.h: 在函数‘google::protobuf::int64 google::protobuf::strto64(const char*, char**, int)’中:
+/usr/local/include/google/protobuf/stubs/strutil.h:373:3: 错误：‘static_assert’在此作用域中尚未声明
+   GOOGLE_COMPILE_ASSERT(sizeof(int64) == sizeof(long long),
+   ^
+/usr/local/include/google/protobuf/stubs/strutil.h: 在函数‘google::protobuf::uint64 google::protobuf::strtou64(const char*, char**, int)’中:
+/usr/local/include/google/protobuf/stubs/strutil.h:379:3: 错误：‘static_assert’在此作用域中尚未声明
+   GOOGLE_COMPILE_ASSERT(sizeof(uint64) == sizeof(unsigned long long),
+   ^
+In file included from mini_dos.pb.h:23:0,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/io/coded_stream.h: 在全局域：
+/usr/local/include/google/protobuf/io/coded_stream.h:849:10: 错误：‘constexpr’不是一个类型名
+   static constexpr int TagSize(uint32 tag) {
+          ^
+/usr/local/include/google/protobuf/io/coded_stream.h:849:10: 附注：C++11 ‘constexpr’ only available with -std=c++11 or -std=gnu++11
+/usr/local/include/google/protobuf/io/coded_stream.h: 在构造函数‘google::protobuf::io::EpsCopyOutputStream::EpsCopyOutputStream(void*, int, bool)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:670:21: 错误：‘nullptr’在此作用域中尚未声明
+         buffer_end_(nullptr),
+                     ^
+In file included from /usr/local/include/google/protobuf/io/coded_stream.h:148:0,
+                 from mini_dos.pb.h:23,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/io/coded_stream.h: 在成员函数‘google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::WriteStringMaybeAliased(google::protobuf::uint32, const string&, google::protobuf::uint8*)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:717:9: 错误：‘TagSize’在此作用域中尚未声明
+     if (PROTOBUF_PREDICT_FALSE(
+         ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在成员函数‘google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::WriteString(google::protobuf::uint32, const T&, google::protobuf::uint8*)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:734:9: 错误：‘TagSize’的实参不依赖模板参数，所以‘TagSize’的声明必须可用 [-fpermissive]
+     if (PROTOBUF_PREDICT_FALSE(
+         ^
+/usr/local/include/google/protobuf/io/coded_stream.h:734:9: 附注：(如果您使用‘-fpermissive’，G++ 会接受您的代码，但是允许使用未定义的名称是不建议使用的风格)
+In file included from mini_dos.pb.h:23:0,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/io/coded_stream.h: 在成员函数‘google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::WriteFixedPacked(int, const T&, google::protobuf::uint8*)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:788:5: 错误：‘constexpr’在此作用域中尚未声明
+     constexpr auto element_size = sizeof(typename T::value_type);
+     ^
+/usr/local/include/google/protobuf/io/coded_stream.h:788:15: 错误：expected ‘;’ before ‘auto’
+     constexpr auto element_size = sizeof(typename T::value_type);
+               ^
+/usr/local/include/google/protobuf/io/coded_stream.h:789:10: 错误：‘size’不是一个类型名
+     auto size = r.size() * element_size;
+          ^
+/usr/local/include/google/protobuf/io/coded_stream.h:790:33: 错误：‘size’在此作用域中尚未声明
+     ptr = WriteLengthDelim(num, size, ptr);
+                                 ^
+/usr/local/include/google/protobuf/io/coded_stream.h:791:33: 错误：‘element_size’在此作用域中尚未声明
+     return WriteRawLittleEndian<element_size>(r.data(), static_cast<int>(size),
+                                 ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在成员函数‘google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::WriteVarintPacked(int, const T&, int, google::protobuf::uint8*, const E&)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:881:10: 错误：‘it’不是一个类型名
+     auto it = r.data();
+          ^
+/usr/local/include/google/protobuf/io/coded_stream.h:882:10: 错误：‘end’不是一个类型名
+     auto end = it + r.size();
+          ^
+/usr/local/include/google/protobuf/io/coded_stream.h:885:34: 错误：‘it’在此作用域中尚未声明
+       ptr = UnsafeVarint(encode(*it++), ptr);
+                                  ^
+/usr/local/include/google/protobuf/io/coded_stream.h:886:14: 错误：‘it’在此作用域中尚未声明
+     } while (it < end);
+              ^
+/usr/local/include/google/protobuf/io/coded_stream.h:886:19: 错误：‘end’在此作用域中尚未声明
+     } while (it < end);
+                   ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在静态成员函数‘static google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::UnsafeVarint(T, google::protobuf::uint8*)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:901:19: 错误：‘is_unsigned’不是‘std’的成员
+     static_assert(std::is_unsigned<T>::value,
+                   ^
+/usr/local/include/google/protobuf/io/coded_stream.h:901:37: 错误：expected primary-expression before ‘>’ token
+     static_assert(std::is_unsigned<T>::value,
+                                     ^
+/usr/local/include/google/protobuf/io/coded_stream.h:901:38: 错误：‘::value’未被声明
+     static_assert(std::is_unsigned<T>::value,
+                                      ^
+/usr/local/include/google/protobuf/io/coded_stream.h:902:58: 错误：‘static_assert’的实参不依赖模板参数，所以‘static_assert’的声明必须可用 [-fpermissive]
+                   "Varint serialization must be unsigned");
+                                                          ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在成员函数‘google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::SetInitialBuffer(void*, int)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:946:10: 错误：‘ptr’不是一个类型名
+     auto ptr = static_cast<uint8*>(data);
+          ^
+/usr/local/include/google/protobuf/io/coded_stream.h:948:14: 错误：‘ptr’在此作用域中尚未声明
+       end_ = ptr + size - kSlopBytes;
+              ^
+/usr/local/include/google/protobuf/io/coded_stream.h:949:21: 错误：‘nullptr’在此作用域中尚未声明
+       buffer_end_ = nullptr;
+                     ^
+/usr/local/include/google/protobuf/io/coded_stream.h:953:21: 错误：‘ptr’在此作用域中尚未声明
+       buffer_end_ = ptr;
+                     ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在静态成员函数‘static const uint8* google::protobuf::io::CodedInputStream::ExpectTagFromArray(const uint8*, google::protobuf::uint32)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:1466:10: 错误：‘nullptr’在此作用域中尚未声明
+   return nullptr;
+          ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在构造函数‘google::protobuf::io::CodedInputStream::CodedInputStream(google::protobuf::io::ZeroCopyInputStream*)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:1533:15: 错误：‘nullptr’在此作用域中尚未声明
+     : buffer_(nullptr),
+               ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在构造函数‘google::protobuf::io::CodedInputStream::CodedInputStream(const uint8*, int)’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:1555:14: 错误：‘nullptr’在此作用域中尚未声明
+       input_(nullptr),
+              ^
+/usr/local/include/google/protobuf/io/coded_stream.h: 在成员函数‘bool google::protobuf::io::CodedInputStream::IsFlat() const’中:
+/usr/local/include/google/protobuf/io/coded_stream.h:1572:65: 错误：‘nullptr’在此作用域中尚未声明
+ inline bool CodedInputStream::IsFlat() const { return input_ == nullptr; }
+                                                                 ^
+In file included from /usr/local/include/google/protobuf/arena.h:55:0,
+                 from mini_dos.pb.h:24,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/arena_impl.h: 在全局域：
+/usr/local/include/google/protobuf/arena_impl.h:58:7: 错误：expected nested-name-specifier before ‘LifecycleId’
+ using LifecycleId = int64_t;
+       ^
+/usr/local/include/google/protobuf/arena_impl.h:58:7: 错误：‘LifecycleId’未声明
+/usr/local/include/google/protobuf/arena_impl.h:58:19: 错误：expected ‘;’ before ‘=’ token
+ using LifecycleId = int64_t;
+                   ^
+/usr/local/include/google/protobuf/arena_impl.h:58:19: 错误：expected unqualified-id before ‘=’ token
+/usr/local/include/google/protobuf/arena_impl.h:284:5: 错误：‘LifecycleId’不是一个类型名
+     LifecycleId last_lifecycle_id_seen;
+     ^
+/usr/local/include/google/protobuf/arena_impl.h:287:22: 错误：‘LifecycleId’在此作用域中尚未声明
+   static std::atomic<LifecycleId> lifecycle_id_generator_;
+                      ^
+/usr/local/include/google/protobuf/arena_impl.h:287:33: 错误：模板第 1 个参数无效
+   static std::atomic<LifecycleId> lifecycle_id_generator_;
+                                 ^
+/usr/local/include/google/protobuf/arena_impl.h:358:3: 错误：‘LifecycleId’不是一个类型名
+   LifecycleId lifecycle_id_;  // Unique for each arena. Changes on Reset().
+   ^
+/usr/local/include/google/protobuf/arena_impl.h:365:22: 错误：expected ‘,’ or ‘...’ before ‘&&’ token
+   ArenaImpl(ArenaImpl&&) = delete;
+                      ^
+/usr/local/include/google/protobuf/arena_impl.h:365:28: 错误：无效的构造函数：您要的可能是‘google::protobuf::internal::ArenaImpl (const google::protobuf::internal::ArenaImpl&)’
+   ArenaImpl(ArenaImpl&&) = delete;
+                            ^
+/usr/local/include/google/protobuf/arena_impl.h:366:33: 错误：expected ‘,’ or ‘...’ before ‘&&’ token
+   ArenaImpl& operator=(ArenaImpl&&) = delete;
+                                 ^
+/usr/local/include/google/protobuf/arena_impl.h:375:17: 错误：‘kBlockHeaderSize’不是一个类型
+   static_assert(kBlockHeaderSize % 8 == 0,
+                 ^
+/usr/local/include/google/protobuf/arena_impl.h:375:34: 错误：expected ‘,’ or ‘...’ before ‘%’ token
+   static_assert(kBlockHeaderSize % 8 == 0,
+                                  ^
+/usr/local/include/google/protobuf/arena_impl.h:377:17: 错误：‘kSerialArenaSize’不是一个类型
+   static_assert(kSerialArenaSize % 8 == 0,
+                 ^
+/usr/local/include/google/protobuf/arena_impl.h:377:34: 错误：expected ‘,’ or ‘...’ before ‘%’ token
+   static_assert(kSerialArenaSize % 8 == 0,
+                                  ^
+/usr/local/include/google/protobuf/arena_impl.h:377:3: 错误：‘int google::protobuf::internal::ArenaImpl::static_assert(int)’无法被重载
+   static_assert(kSerialArenaSize % 8 == 0,
+   ^
+/usr/local/include/google/protobuf/arena_impl.h:375:3: 错误：与‘int google::protobuf::internal::ArenaImpl::static_assert(int)’
+   static_assert(kBlockHeaderSize % 8 == 0,
+   ^
+/usr/local/include/google/protobuf/arena_impl.h: 在成员函数‘void google::protobuf::internal::ArenaImpl::CacheSerialArena(google::protobuf::internal::ArenaImpl::SerialArena*)’中:
+/usr/local/include/google/protobuf/arena_impl.h:312:20: 错误：‘struct google::protobuf::internal::ArenaImpl::ThreadCache’没有名为‘last_lifecycle_id_seen’的成员
+     thread_cache().last_lifecycle_id_seen = lifecycle_id_;
+                    ^
+/usr/local/include/google/protobuf/arena_impl.h:312:45: 错误：‘lifecycle_id_’在此作用域中尚未声明
+     thread_cache().last_lifecycle_id_seen = lifecycle_id_;
+                                             ^
+In file included from /usr/local/include/google/protobuf/arena_impl.h:46:0,
+                 from /usr/local/include/google/protobuf/arena.h:55,
+                 from mini_dos.pb.h:24,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/arena_impl.h: 在成员函数‘bool google::protobuf::internal::ArenaImpl::GetSerialArenaFromThreadCache(google::protobuf::internal::ArenaImpl::SerialArena**)’中:
+/usr/local/include/google/protobuf/arena_impl.h:351:9: 错误：‘struct google::protobuf::internal::ArenaImpl::ThreadCache’没有名为‘last_lifecycle_id_seen’的成员
+     if (PROTOBUF_PREDICT_TRUE(tc->last_lifecycle_id_seen == lifecycle_id_)) {
+         ^
+/usr/local/include/google/protobuf/arena_impl.h:351:9: 错误：‘lifecycle_id_’在此作用域中尚未声明
+     if (PROTOBUF_PREDICT_TRUE(tc->last_lifecycle_id_seen == lifecycle_id_)) {
+         ^
+In file included from mini_dos.pb.h:24:0,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/arena.h: 在全局域：
+/usr/local/include/google/protobuf/arena.h:251:31: 错误：expected unqualified-id before numeric constant
+ class PROTOBUF_EXPORT alignas(8) Arena final {
+                               ^
+/usr/local/include/google/protobuf/arena.h:251:31: 错误：expected ‘)’ before numeric constant
+In file included from utility.h:15:0,
+                 from worker.cpp:1:
+mini_dos.pb.h:730:30: 错误：expected ‘}’ before end of line
+   #pragma GCC diagnostic push
+                              ^
+mini_dos.pb.h:730:30: 错误：expected ‘}’ before end of line
+mini_dos.pb.h:730:30: 错误：expected declaration before end of line
+In file included from mini_dos.pb.h:23:0,
+                 from utility.h:15,
+                 from worker.cpp:1:
+/usr/local/include/google/protobuf/io/coded_stream.h: In instantiation of ‘static google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::UnsafeVarint(T, google::protobuf::uint8*) [with T = unsigned int; google::protobuf::uint8 = unsigned char]’:
+/usr/local/include/google/protobuf/io/coded_stream.h:721:43:   required from here
+/usr/local/include/google/protobuf/io/coded_stream.h:902:58: 错误：‘static_assert’在此作用域中尚未声明
+                   "Varint serialization must be unsigned");
+                                                          ^
+/usr/local/include/google/protobuf/io/coded_stream.h: In instantiation of ‘static google::protobuf::uint8* google::protobuf::io::EpsCopyOutputStream::UnsafeVarint(T, google::protobuf::uint8*) [with T = long unsigned int; google::protobuf::uint8 = unsigned char]’:
+/usr/local/include/google/protobuf/io/coded_stream.h:1595:57:   required from here
+/usr/local/include/google/protobuf/io/coded_stream.h:902:58: 错误：‘static_assert’在此作用域中尚未声明
+make: *** [worker.o] 错误 1
