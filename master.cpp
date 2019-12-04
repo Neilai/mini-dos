@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     perror("listen error");
     exit(-1);
   }
-  printf("Start to listen: %s\n", SERVER_IP);
+  //printf("Start to listen: %s\n", SERVER_IP);
   //在内核中创建事件表
   int epfd = epoll_create(EPOLL_SIZE);
   if (epfd < 0)
@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
     perror("epfd error");
     exit(-1);
   }
-  printf("epoll created, epollfd = %d\n", epfd);
   static struct epoll_event events[EPOLL_SIZE];
   //往内核事件表里添加事件
   addfd(epfd, listener, true);
@@ -55,7 +54,6 @@ int main(int argc, char *argv[])
     for (int i = 0; i < epoll_events_count; ++i)
     {
       int sockfd = events[i].data.fd;
-      printf("events :%d \n", events[i].events);
       char *message = new char[BUF_SIZE];
       //新用户连接
       if (sockfd == listener)
@@ -63,7 +61,7 @@ int main(int argc, char *argv[])
         struct sockaddr_in client_address;
         socklen_t client_addrLength = sizeof(struct sockaddr_in);
         int clientfd = accept(listener, (struct sockaddr *)&client_address, &client_addrLength);
-        printf("新连接: %s : % d(IP : port), clientfd = %d \n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port), clientfd);
+        printf("新连接:ip为 %s :端口为 % d,描述符为%d \n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port), clientfd);
 
         addfd(epfd, clientfd, true);
       }
@@ -75,14 +73,14 @@ int main(int argc, char *argv[])
       }
       else if (events[i].events & EPOLLIN)
       {
-        printf("描述符为%d \n", events[i].data.fd);
+        printf("epoll处理的描述符为%d \n", events[i].data.fd);
         int ret = recv(events[i].data.fd, message, BUF_SIZE, 0);
         ret = recv(events[i].data.fd, message, BUF_SIZE, 0);
         dos::Operation deserializedOperation;
         deserializedOperation.ParseFromArray(message, BUF_SIZE);
-        cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
+        cout << "收包反序列化结果:" <<endl<< deserializedOperation.DebugString();
 
-        printf("ret : %d \n", ret);
+        printf("recv返回值: %d \n", ret);
         if (ret != 0)
         {
           if (deserializedOperation.operation() == 1)
@@ -91,7 +89,7 @@ int main(int argc, char *argv[])
             char *ip = "127.0.0.1";
             tuple<char *, int, int> worker(ip, deserializedOperation.port(), 0);
 
-            printf("worker 信息: %s : % d(IP : port)",
+            printf("worker 信息: ip为%s : 端口为% d\n",
                    get<0>(worker),
                    get<1>(worker));
             socketMap.insert(pair<int, tuple<char *, int, int>>(int(events[i].data.fd), worker));
@@ -107,18 +105,31 @@ int main(int argc, char *argv[])
                 minId = it->first;
               it++;
             }
-            printf("分配描述符%d ip:%s port:%d\n", minId, get<0>(socketMap[minId]), get<1>(socketMap[minId]));
+            printf("为Client分配的worker信息:描述符为%d,ip为%s, port为%d\n", minId, get<0>(socketMap[minId]), get<1>(socketMap[minId]));
             dos::Operation operation;
             operation.set_port(get<1>(socketMap[minId]));
             operation.set_ip(get<0>(socketMap[minId]));
             operation.set_operation(dos::Operation::DISTRIBUTE);
             operation.SerializeToArray(message, BUF_SIZE);
             if (send(events[i].data.fd, message, strlen(message), 0) < 0)
-              printf("send msg erroro");
+              printf("send msg erroro\n");
+            char* ip;
+            int port;
+            int num;
+            auto tp = make_tuple(ref(ip), ref(port), ref(num)) =socketMap[minId];
+            num=num+1;
+            socketMap[minId]=tp;
+            cout<<"描述符"<<minId<<"当前负载为"<< get<2>(socketMap[minId])<<endl;
           }
-          else if (deserializedOperation.operation() == 4){
+          else {
+            char* ip;
+            int port;
+            int num;
+            auto tp = make_tuple(ref(ip), ref(port), ref(num)) =socketMap[events[i].data.fd];
+            num=num-1;
+            socketMap[events[i].data.fd]=tp;
+            cout<<"描述符"<<events[i].data.fd<<"当前负载为"<< get<2>(socketMap[events[i].data.fd])<<endl;
             printf("收到worker完成任务通知\n");
-            //ge;ci
           }
           continue;
         }
@@ -134,7 +145,7 @@ int main(int argc, char *argv[])
       }
       delete[] message;
     }
-    printf("epoll_events_count = %d\nmap size:%d \n", epoll_events_count, socketMap.size());
+    printf("当前循环处理的epoll事件数= %d\n当前注册worker数:%d \n", epoll_events_count, socketMap.size());
   }
   return 0;
 }

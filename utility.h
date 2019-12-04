@@ -43,7 +43,7 @@ void addfd(int epollfd, int fd, bool enable_et)
     epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &ev);
     setnonblocking(fd);
     noNagle(fd);
-    printf("fd added to epoll!\n\n");
+    printf("新描述符添加到了epoll\n");
 }
 template<typename T>
 T compute(T a, T b,string op)
