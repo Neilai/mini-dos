@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     perror("listen error");
     exit(-1);
   }
-  printf("Start to listen: %s\n", SERVER_IP);
+  //printf("master开始监听，监听地址: %s\n", SERVER_IP);
   if (ret < 0)
   {
     perror("listen error");

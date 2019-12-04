@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     // 创建socket
     dos::Operation operation;
-    operation.set_port(WORKER_PORT);
+    operation.set_port(atoi(argv[1]));
     operation.set_operation(dos::Operation::REGISTER);
     operation.SerializeToArray(message, BUF_SIZE);
     int sock = socket(PF_INET, SOCK_STREAM, 0);
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     }
 
     workerAddr.sin_family = PF_INET;
-    workerAddr.sin_port = htons(WORKER_PORT);
+    workerAddr.sin_port = htons(atoi(argv[1]));
     workerAddr.sin_addr.s_addr = inet_addr(WORKER_IP);
     int listener = socket(PF_INET, SOCK_STREAM, 0);
     if (bind(listener, (struct sockaddr *)&workerAddr, sizeof(workerAddr)) < 0)
@@ -43,14 +43,14 @@ int main(int argc, char *argv[])
         perror("listen error");
         exit(-1);
     }
-    printf("Start to listen: %s\n", WORKER_IP);
+    printf("worker开始监听: %s\n", WORKER_IP);
     int epfd = epoll_create(EPOLL_SIZE);
     if (epfd < 0)
     {
         perror("epfd error");
         exit(-1);
     }
-    printf("epoll created, epollfd = %d\n", epfd);
+    //printf("epoll created, epollfd = %d\n", epfd);
     static struct epoll_event events[EPOLL_SIZE];
     //往内核事件表里添加事件
     addfd(epfd, listener, true);
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
                 struct sockaddr_in client_address;
                 socklen_t client_addrLength = sizeof(struct sockaddr_in);
                 int clientfd = accept(listener, (struct sockaddr *)&client_address, &client_addrLength);
-                printf("新连接: %s : % d(IP : port), clientfd = %d \n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port), clientfd);
+                printf("worker收到新连接: %s : % d(IP : port), clientfd = %d \n", inet_ntoa(client_address.sin_addr), ntohs(client_address.sin_port), clientfd);
                 addfd(epfd, clientfd, true);
             }
             else if (events[i].events & (EPOLLRDHUP | EPOLLHUP | EPOLLERR))
@@ -94,11 +94,11 @@ int main(int argc, char *argv[])
                 {
                     dos::Operation deserializedOperation;
                     deserializedOperation.ParseFromArray(request, BUF_SIZE);
-                    cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
+                    cout << "收包反序列化结果" << deserializedOperation.DebugString();
                     const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
-                    cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
-                    cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
-                    printf(" 进行计算...\n");
+                    //cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
+                    //cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
+                    //printf(" 进行计算...\n");
                     dos::Operation resultOperation;
                     resultOperation.set_operation(dos::Operation::RETURN);
                     dos::Operation::Result* result = resultOperation.add_result();
