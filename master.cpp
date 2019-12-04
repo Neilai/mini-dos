@@ -116,6 +116,10 @@ int main(int argc, char *argv[])
             if (send(events[i].data.fd, message, strlen(message), 0) < 0)
               printf("send msg erroro");
           }
+          else if (deserializedOperation.operation() == 4){
+            printf("收到worker完成任务通知\n");
+            //ge;ci
+          }
           continue;
         }
         map<int, tuple<char *, int, int>>::iterator it;

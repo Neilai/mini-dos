@@ -67,7 +67,8 @@ int main(int argc, char *argv[])
         //处理这epoll_events_count个就绪事件
         for (int i = 0; i < epoll_events_count; ++i)
         {
-            char *result = new char[BUF_SIZE];
+            char *resultBuffer = new char[BUF_SIZE];
+            char *finishBuffer = new char[BUF_SIZE];
             char *request = new char[BUF_SIZE];
             int sockfd = events[i].data.fd;
             if (sockfd == listener)
@@ -88,24 +89,40 @@ int main(int argc, char *argv[])
             {
                 int ret = recv(events[i].data.fd, request, BUF_SIZE, 0);
                 printf("ret : %d \n",ret);
-                dos::Operation deserializedOperation;
-                deserializedOperation.ParseFromArray(request, BUF_SIZE);
-                cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
-                const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
-                cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
-                cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
 
                 if (ret != 0)
                 {
+                    dos::Operation deserializedOperation;
+                    deserializedOperation.ParseFromArray(request, BUF_SIZE);
+                    cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
+                    const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
+                    cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
+                    cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
                     printf(" 进行计算...\n");
+                    dos::Operation resultOperation;
+                    resultOperation.set_operation(dos::Operation::RETURN);
+                    dos::Operation::Result* result = resultOperation.add_result();
                     if(task_content.operation_num_type()=="int"){
-                        int result=compute<int>(stoi(task_content.operation_num_one()),stoi(task_content.operation_num_two()),task_content.operation_label());
-                        cout<<"计算结果:"<<result<<endl;
+                        int  computeResult=compute<int>(stoi(task_content.operation_num_one()),stoi(task_content.operation_num_two()),task_content.operation_label());
+                        result->set_result_type("int");
+                        result->set_result_value(to_string(computeResult));
+                        cout<<"计算结果:"<<computeResult<<endl;
                     }
+
+                    resultOperation.SerializeToArray(resultBuffer, BUF_SIZE);
+                    if (send(events[i].data.fd, resultBuffer, BUF_SIZE, 0) < 0)
+                      printf("send msg erroro");
+
+                    dos::Operation finishOperation;
+                    finishOperation.set_operation(dos::Operation::FINISH);
+                    resultOperation.SerializeToArray(finishBuffer, BUF_SIZE);
+                    if (send(sock, finishBuffer, BUF_SIZE, 0) < 0)
+                      printf("send msg erroro");
                     continue;
                 }
             }
-            delete[] result;
+            delete[] resultBuffer;
+            delete[] finishBuffer;
             delete[] request;
         }
     }

@@ -64,5 +64,10 @@ int main(int argc, char *argv[])
         printf("send msg erroro");
         return 0;
     }
+    
+    ret = recv(sockWorker, message, BUF_SIZE, 0);
+    deserializedOperation.ParseFromArray(message, BUF_SIZE);
+    cout << "deserializedOperation debugString:" << deserializedOperation.DebugString();
+
 }
 
