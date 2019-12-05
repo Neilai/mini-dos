@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     char message[BUF_SIZE];
     char resultBuffer[BUF_SIZE];
     char finishBuffer[BUF_SIZE];
-    char request[BUF_SIZE];
+    char requestBuffer[BUF_SIZE];
 
     // 创建socket
     dos::Operation operation;
@@ -60,9 +60,7 @@ int main(int argc, char *argv[])
     while (1)
     {
         //epoll_events_count表示就绪事件的数目
-        cout<<"开始epoll处理"<<endl;
         int epoll_events_count = epoll_wait(epfd, events, EPOLL_SIZE, -1);
-        cout<<"epoll wait成功"<<endl;
         if (epoll_events_count < 0)
         {
             perror("epoll failure");
@@ -74,7 +72,7 @@ int main(int argc, char *argv[])
         {
             memset(finishBuffer,0,BUF_SIZE);
             memset(resultBuffer,0,BUF_SIZE);
-            memset(request,0,BUF_SIZE);
+            memset(requestBuffer,0,BUF_SIZE);
             int sockfd = events[i].data.fd;
             if (sockfd == listener)
             {
@@ -93,13 +91,13 @@ int main(int argc, char *argv[])
             }
             else if (events[i].events & EPOLLIN)
             {
-                int ret = recv(events[i].data.fd, request, BUF_SIZE, 0);
+                int ret = recv(events[i].data.fd, requestBuffer, BUF_SIZE, 0);
                 printf("ret : %d \n",ret);
 
                 if (ret != 0)
                 {
                     dos::Operation deserializedOperation;
-                    deserializedOperation.ParseFromArray(request, BUF_SIZE);
+                    deserializedOperation.ParseFromArray(requestBuffer, BUF_SIZE);
                     cout << "收包反序列化结果" << deserializedOperation.DebugString();
                     const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
                     //cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
@@ -111,6 +109,18 @@ int main(int argc, char *argv[])
                     if(task_content.operation_num_type()=="int"){
                         int  computeResult=compute<int>(stoi(task_content.operation_num_one()),stoi(task_content.operation_num_two()),task_content.operation_label());
                         result->set_result_type("int");
+                        result->set_result_value(to_string(computeResult));
+                        cout<<"计算结果:"<<computeResult<<endl;
+                    }
+                    if(task_content.operation_num_type()=="int64"){
+                        long long  computeResult=compute<long long>(stoll(task_content.operation_num_one()),stoll(task_content.operation_num_two()),task_content.operation_label());
+                        result->set_result_type("int64");
+                        result->set_result_value(to_string(computeResult));
+                        cout<<"计算结果:"<<computeResult<<endl;
+                    }
+                    if(task_content.operation_num_type()=="float"){
+                        float computeResult=compute<float>(stof(task_content.operation_num_one()),stof(task_content.operation_num_two()),task_content.operation_label());
+                        result->set_result_type("float");
                         result->set_result_value(to_string(computeResult));
                         cout<<"计算结果:"<<computeResult<<endl;
                     }
@@ -134,9 +144,6 @@ int main(int argc, char *argv[])
                 if (close(events[i].data.fd) == -1)
                     perror("close failure");
              }
-            //delete[] resultBuffer;
-            //delete[] request;
-            //delete[] finishBuffer;
             }
         printf("当前循环处理的epoll事件数= %d\n", epoll_events_count);
     }

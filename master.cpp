@@ -44,9 +44,7 @@ int main(int argc, char *argv[])
   while (1)
   {
     //epoll_events_count表示就绪事件的数目
-    cout<<"begin"<<endl;
     int epoll_events_count = epoll_wait(epfd, events, EPOLL_SIZE, -1);
-    cout<<"end"<<endl;
     if (epoll_events_count < 0)
     {
       perror("epoll failure");
