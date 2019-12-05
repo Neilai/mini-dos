@@ -70,9 +70,9 @@ int main(int argc, char *argv[])
         //处理这epoll_events_count个就绪事件
         for (int i = 0; i < epoll_events_count; ++i)
         {
-            memset(finishBuffer,0,BUF_SIZE);
-            memset(resultBuffer,0,BUF_SIZE);
-            memset(requestBuffer,0,BUF_SIZE);
+            memset(finishBuffer, 0, BUF_SIZE);
+            memset(resultBuffer, 0, BUF_SIZE);
+            memset(requestBuffer, 0, BUF_SIZE);
             int sockfd = events[i].data.fd;
             if (sockfd == listener)
             {
@@ -85,49 +85,52 @@ int main(int argc, char *argv[])
             else if (events[i].events & (EPOLLRDHUP | EPOLLHUP | EPOLLERR))
             {
                 printf("closing fd %d", events[i].data.fd);
-                epoll_ctl(epfd,EPOLL_CTL_DEL,events[i].data.fd,NULL);
+                epoll_ctl(epfd, EPOLL_CTL_DEL, events[i].data.fd, NULL);
                 if (close(events[i].data.fd) == -1)
                     perror("close failure");
             }
             else if (events[i].events & EPOLLIN)
             {
                 int ret = recv(events[i].data.fd, requestBuffer, BUF_SIZE, 0);
-                printf("ret : %d \n",ret);
+                printf("ret : %d \n", ret);
 
                 if (ret != 0)
                 {
                     dos::Operation deserializedOperation;
                     deserializedOperation.ParseFromArray(requestBuffer, BUF_SIZE);
                     cout << "收包反序列化结果" << deserializedOperation.DebugString();
-                    const dos::Operation::DistributeTask& task_content = deserializedOperation.task(0);
+                    const dos::Operation::DistributeTask &task_content = deserializedOperation.task(0);
                     //cout<<"DistributeTask:"<<task_content.operation_num_type()<<endl;
                     //cout<<task_content.operation_num_one()<<task_content.operation_label()<<task_content.operation_num_two()<<endl;
                     //printf(" 进行计算...\n");
                     dos::Operation resultOperation;
                     resultOperation.set_operation(dos::Operation::RETURN);
-                    dos::Operation::Result* result = resultOperation.add_result();
-                    if(task_content.operation_num_type()=="int"){
-                        int  computeResult=compute<int>(stoi(task_content.operation_num_one()),stoi(task_content.operation_num_two()),task_content.operation_label());
+                    dos::Operation::Result *result = resultOperation.add_result();
+                    if (task_content.operation_num_type() == "int")
+                    {
+                        int computeResult = compute<int>(stoi(task_content.operation_num_one()), stoi(task_content.operation_num_two()), task_content.operation_label());
                         result->set_result_type("int");
                         result->set_result_value(to_string(computeResult));
-                        cout<<"计算结果:"<<computeResult<<endl;
+                        cout << "计算结果:" << computeResult << endl;
                     }
-                    if(task_content.operation_num_type()=="int64"){
-                        long long  computeResult=compute<long long>(stoll(task_content.operation_num_one()),stoll(task_content.operation_num_two()),task_content.operation_label());
+                    if (task_content.operation_num_type() == "int64")
+                    {
+                        long long computeResult = compute<long long>(stoll(task_content.operation_num_one()), stoll(task_content.operation_num_two()), task_content.operation_label());
                         result->set_result_type("int64");
                         result->set_result_value(to_string(computeResult));
-                        cout<<"计算结果:"<<computeResult<<endl;
+                        cout << "计算结果:" << computeResult << endl;
                     }
-                    if(task_content.operation_num_type()=="float"){
-                        float computeResult=compute<float>(stof(task_content.operation_num_one()),stof(task_content.operation_num_two()),task_content.operation_label());
+                    if (task_content.operation_num_type() == "float")
+                    {
+                        float computeResult = compute<float>(stof(task_content.operation_num_one()), stof(task_content.operation_num_two()), task_content.operation_label());
                         result->set_result_type("float");
                         result->set_result_value(to_string(computeResult));
-                        cout<<"计算结果:"<<computeResult<<endl;
+                        cout << "计算结果:" << computeResult << endl;
                     }
 
                     resultOperation.SerializeToArray(resultBuffer, BUF_SIZE);
                     if (send(events[i].data.fd, resultBuffer, BUF_SIZE, 0) < 0)
-                      printf("send msg erroro");
+                        printf("send msg erroro");
                     dos::Operation finishOperation;
                     dos::Operation deserializedFinish;
                     finishOperation.set_operation(dos::Operation::FINISH);
@@ -136,16 +139,15 @@ int main(int argc, char *argv[])
                     deserializedFinish.ParseFromArray(finishBuffer, BUF_SIZE);
                     //cout << "发包反序列化结果" << deserializedFinish.DebugString();
                     if (send(sock, finishBuffer, BUF_SIZE, 0) < 0)
-                      printf("send msg erroro");
+                        printf("send msg erroro");
                     continue;
                 }
-                epoll_ctl(epfd,EPOLL_CTL_DEL,events[i].data.fd,NULL);
-                cout<<"检测到关闭移除描述符"<<endl;
+                epoll_ctl(epfd, EPOLL_CTL_DEL, events[i].data.fd, NULL);
+                cout << "检测到关闭移除描述符" << endl;
                 if (close(events[i].data.fd) == -1)
                     perror("close failure");
-             }
             }
+        }
         printf("当前循环处理的epoll事件数= %d\n", epoll_events_count);
     }
 }
-
