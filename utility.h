@@ -49,7 +49,7 @@ template<typename T>
 T compute(T a, T b,string op)
 {
     cout<<"进入计算函数"<<endl;
-    sleep(2);
+    //sleep(2);
     if(op[0]=='+')
       return a + b;
     else if(op[0]=='-')

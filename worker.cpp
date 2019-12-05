@@ -9,6 +9,9 @@ int main(int argc, char *argv[])
     serverAddr.sin_addr.s_addr = inet_addr(SERVER_IP);
 
     char message[BUF_SIZE];
+    char resultBuffer[BUF_SIZE];
+    char finishBuffer[BUF_SIZE];
+    char request[BUF_SIZE];
 
     // 创建socket
     dos::Operation operation;
@@ -57,7 +60,9 @@ int main(int argc, char *argv[])
     while (1)
     {
         //epoll_events_count表示就绪事件的数目
+        cout<<"开始epoll处理"<<endl;
         int epoll_events_count = epoll_wait(epfd, events, EPOLL_SIZE, -1);
+        cout<<"epoll wait成功"<<endl;
         if (epoll_events_count < 0)
         {
             perror("epoll failure");
@@ -67,9 +72,9 @@ int main(int argc, char *argv[])
         //处理这epoll_events_count个就绪事件
         for (int i = 0; i < epoll_events_count; ++i)
         {
-            char *resultBuffer = new char[BUF_SIZE];
-            char *finishBuffer = new char[BUF_SIZE];
-            char *request = new char[BUF_SIZE];
+            memset(finishBuffer,0,BUF_SIZE);
+            memset(resultBuffer,0,BUF_SIZE);
+            memset(request,0,BUF_SIZE);
             int sockfd = events[i].data.fd;
             if (sockfd == listener)
             {
@@ -82,6 +87,7 @@ int main(int argc, char *argv[])
             else if (events[i].events & (EPOLLRDHUP | EPOLLHUP | EPOLLERR))
             {
                 printf("closing fd %d", events[i].data.fd);
+                epoll_ctl(epfd,EPOLL_CTL_DEL,events[i].data.fd,NULL);
                 if (close(events[i].data.fd) == -1)
                     perror("close failure");
             }
@@ -112,19 +118,27 @@ int main(int argc, char *argv[])
                     resultOperation.SerializeToArray(resultBuffer, BUF_SIZE);
                     if (send(events[i].data.fd, resultBuffer, BUF_SIZE, 0) < 0)
                       printf("send msg erroro");
-
                     dos::Operation finishOperation;
+                    dos::Operation deserializedFinish;
                     finishOperation.set_operation(dos::Operation::FINISH);
                     resultOperation.SerializeToArray(finishBuffer, BUF_SIZE);
+
+                    deserializedFinish.ParseFromArray(finishBuffer, BUF_SIZE);
+                    //cout << "发包反序列化结果" << deserializedFinish.DebugString();
                     if (send(sock, finishBuffer, BUF_SIZE, 0) < 0)
                       printf("send msg erroro");
                     continue;
                 }
+                epoll_ctl(epfd,EPOLL_CTL_DEL,events[i].data.fd,NULL);
+                cout<<"检测到关闭移除描述符"<<endl;
+                if (close(events[i].data.fd) == -1)
+                    perror("close failure");
+             }
+            //delete[] resultBuffer;
+            //delete[] request;
+            //delete[] finishBuffer;
             }
-            delete[] resultBuffer;
-            delete[] finishBuffer;
-            delete[] request;
-        }
+        printf("当前循环处理的epoll事件数= %d\n", epoll_events_count);
     }
 }
 

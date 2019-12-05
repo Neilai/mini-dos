@@ -40,10 +40,13 @@ int main(int argc, char *argv[])
   static struct epoll_event events[EPOLL_SIZE];
   //往内核事件表里添加事件
   addfd(epfd, listener, true);
+      char message[BUF_SIZE];
   while (1)
   {
     //epoll_events_count表示就绪事件的数目
+    cout<<"begin"<<endl;
     int epoll_events_count = epoll_wait(epfd, events, EPOLL_SIZE, -1);
+    cout<<"end"<<endl;
     if (epoll_events_count < 0)
     {
       perror("epoll failure");
@@ -54,7 +57,8 @@ int main(int argc, char *argv[])
     for (int i = 0; i < epoll_events_count; ++i)
     {
       int sockfd = events[i].data.fd;
-      char *message = new char[BUF_SIZE];
+      memset(message,0,BUF_SIZE);
+      //char *message = new char[BUF_SIZE];
       //新用户连接
       if (sockfd == listener)
       {
@@ -135,6 +139,8 @@ int main(int argc, char *argv[])
         }
         map<int, tuple<char *, int, int>>::iterator it;
         it = socketMap.find(int(events[i].data.fd));
+        if (close(events[i].data.fd) == -1)
+          perror("close failure");
         if (it == socketMap.end())
           printf("关闭描述符，该描述符没有在map中注册\n");
         else
@@ -143,7 +149,7 @@ int main(int argc, char *argv[])
           printf("关闭描述符，并从map中移除\n");
         }
       }
-      delete[] message;
+      //delete[] message;
     }
     printf("当前循环处理的epoll事件数= %d\n当前注册worker数:%d \n", epoll_events_count, socketMap.size());
   }

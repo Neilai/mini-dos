@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
           exit(-1);
       }
       while(1){
+        sleep(0.01);
       // 创建socket
       dos::Operation operation;
       dos::Operation deserializedOperation;
@@ -62,7 +63,6 @@ int main(int argc, char *argv[])
       deserializedOperation.ParseFromArray(message, BUF_SIZE);
       cout << "计算结果:" << deserializedOperation.DebugString();
       close(sockWorker);
-      sleep(1);
     }
 
 }
