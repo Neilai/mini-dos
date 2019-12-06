@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
   static struct epoll_event events[EPOLL_SIZE];
   //往内核事件表里添加事件
   addfd(epfd, listener, true);
-      char message[BUF_SIZE];
+  char message[BUF_SIZE];
   while (1)
   {
     //epoll_events_count表示就绪事件的数目
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < epoll_events_count; ++i)
     {
       int sockfd = events[i].data.fd;
-      memset(message,0,BUF_SIZE);
+      memset(message, 0, BUF_SIZE);
       //char *message = new char[BUF_SIZE];
       //新用户连接
       if (sockfd == listener)
@@ -80,7 +80,8 @@ int main(int argc, char *argv[])
         ret = recv(events[i].data.fd, message, BUF_SIZE, 0);
         dos::Operation deserializedOperation;
         deserializedOperation.ParseFromArray(message, BUF_SIZE);
-        cout << "收包反序列化结果:" <<endl<< deserializedOperation.DebugString();
+        cout << "收包反序列化结果:" << endl
+             << deserializedOperation.DebugString();
 
         printf("recv返回值: %d \n", ret);
         if (ret != 0)
@@ -125,22 +126,23 @@ int main(int argc, char *argv[])
             operation.SerializeToArray(message, BUF_SIZE);
             if (send(events[i].data.fd, message, strlen(message), 0) < 0)
               printf("send msg erroro\n");
-            char* ip;
+            char *ip;
             int port;
             int num;
-            auto tp = make_tuple(ref(ip), ref(port), ref(num)) =socketMap[minId];
-            num=num+1;
-            socketMap[minId]=tp;
-            cout<<"描述符"<<minId<<"当前负载为"<< get<2>(socketMap[minId])<<endl;
+            auto tp = make_tuple(ref(ip), ref(port), ref(num)) = socketMap[minId];
+            num = num + 1;
+            socketMap[minId] = tp;
+            cout << "描述符" << minId << "当前负载为" << get<2>(socketMap[minId]) << endl;
           }
-          else {
-            char* ip;
+          else
+          {
+            char *ip;
             int port;
             int num;
-            auto tp = make_tuple(ref(ip), ref(port), ref(num)) =socketMap[events[i].data.fd];
-            num=num-1;
-            socketMap[events[i].data.fd]=tp;
-            cout<<"描述符"<<events[i].data.fd<<"当前负载为"<< get<2>(socketMap[events[i].data.fd])<<endl;
+            auto tp = make_tuple(ref(ip), ref(port), ref(num)) = socketMap[events[i].data.fd];
+            num = num - 1;
+            socketMap[events[i].data.fd] = tp;
+            cout << "描述符" << events[i].data.fd << "当前负载为" << get<2>(socketMap[events[i].data.fd]) << endl;
             printf("收到worker完成任务通知\n");
           }
           continue;
@@ -163,4 +165,3 @@ int main(int argc, char *argv[])
   }
   return 0;
 }
-
