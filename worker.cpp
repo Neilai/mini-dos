@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
             }
             else if (events[i].events & (EPOLLRDHUP | EPOLLHUP | EPOLLERR))
             {
-                printf("closing fd %d", events[i].data.fd);
+                printf("关闭描述符%d\n", events[i].data.fd);
                 epoll_ctl(epfd,EPOLL_CTL_DEL,events[i].data.fd,NULL);
                 if (close(events[i].data.fd) == -1)
                     perror("close failure");

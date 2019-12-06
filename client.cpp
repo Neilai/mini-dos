@@ -26,14 +26,21 @@ int main(int argc, char *argv[])
 
 
       operation.set_operation(dos::Operation::QUERY);
+      memset(message,0,BUF_SIZE);
       operation.SerializeToArray(message, BUF_SIZE);
       if (send(sockMaster, message, strlen(message), 0) < 0)
       {
           printf("send msg erroro");
           return 0;
       }
+      memset(message,0,BUF_SIZE);
       int ret = recv(sockMaster, message, BUF_SIZE, 0);
       deserializedOperation.ParseFromArray(message, BUF_SIZE);
+      if(!deserializedOperation.port()){
+        printf("没有可用worker,请等待worker上线\n");
+        continue;
+      }
+      cout << "分配结果:" << deserializedOperation.DebugString();
       workerAddr.sin_family = PF_INET;
       workerAddr.sin_port = htons(deserializedOperation.port());
       workerAddr.sin_addr.s_addr = inet_addr(deserializedOperation.ip().c_str());
@@ -49,6 +56,7 @@ int main(int argc, char *argv[])
       task->set_operation_num_one("1");
       task->set_operation_num_two("9999");
       task->set_operation_label("+");
+      memset(message,0,BUF_SIZE);
       operation.SerializeToArray(message, BUF_SIZE);
       if (send(sockWorker,message, strlen(message), 0) < 0)
       {
@@ -56,6 +64,7 @@ int main(int argc, char *argv[])
           return 0;
       }
       setsockopt(sockWorker, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv,sizeof(struct timeval));
+      memset(message,0,BUF_SIZE);
       ret = recv(sockWorker, message, BUF_SIZE, 0);
       if(ret==-1){
         printf("worker似乎下线了，等待超时,重新请求计算\n");
@@ -68,18 +77,21 @@ int main(int argc, char *argv[])
 
 
       operation.set_operation(dos::Operation::QUERY);
+      memset(message,0,BUF_SIZE);
       operation.SerializeToArray(message, BUF_SIZE);
       if (send(sockMaster, message, strlen(message), 0) < 0)
       {
           printf("send msg erroro");
           return 0;
       }
+      memset(message,0,BUF_SIZE);
       ret = recv(sockMaster, message, BUF_SIZE, 0);
-      if(ret==-1){
-        printf("worker似乎下线了，等待超时,重新请求计算\n");
+      deserializedOperation.ParseFromArray(message, BUF_SIZE);
+      if(!deserializedOperation.port()){
+        printf("没有可用worker,请等待worker上线\n");
         continue;
       }
-      deserializedOperation.ParseFromArray(message, BUF_SIZE);
+      cout << "分配结果:" << deserializedOperation.DebugString();
       workerAddr.sin_family = PF_INET;
       workerAddr.sin_port = htons(deserializedOperation.port());
       workerAddr.sin_addr.s_addr = inet_addr(deserializedOperation.ip().c_str());
@@ -94,6 +106,7 @@ int main(int argc, char *argv[])
       task->set_operation_num_one("1");
       task->set_operation_num_two("9999");
       task->set_operation_label("*");
+      memset(message,0,BUF_SIZE);
       operation.SerializeToArray(message, BUF_SIZE);
       if (send(sockWorker,message, strlen(message), 0) < 0)
       {
@@ -101,7 +114,12 @@ int main(int argc, char *argv[])
           return 0;
       }
       
+      memset(message,0,BUF_SIZE);
       ret = recv(sockWorker, message, BUF_SIZE, 0);
+      if(ret==-1){
+        printf("worker似乎下线了，等待超时,重新请求计算\n");
+        continue;
+      }
       deserializedOperation.ParseFromArray(message, BUF_SIZE);
       cout << "计算结果:" << deserializedOperation.DebugString();
       close(sockWorker);
@@ -109,18 +127,21 @@ int main(int argc, char *argv[])
 
 
       operation.set_operation(dos::Operation::QUERY);
+      memset(message,0,BUF_SIZE);
       operation.SerializeToArray(message, BUF_SIZE);
       if (send(sockMaster, message, strlen(message), 0) < 0)
       {
           printf("send msg erroro");
           return 0;
       }
+      memset(message,0,BUF_SIZE);
       ret = recv(sockMaster, message, BUF_SIZE, 0);
-      if(ret==-1){
-        printf("worker似乎下线了，等待超时,重新请求计算\n");
+      deserializedOperation.ParseFromArray(message, BUF_SIZE);
+      if(!deserializedOperation.port()){
+        printf("没有可用worker,请等待worker上线\n");
         continue;
       }
-      deserializedOperation.ParseFromArray(message, BUF_SIZE);
+      cout << "分配结果:" << deserializedOperation.DebugString();
       workerAddr.sin_family = PF_INET;
       workerAddr.sin_port = htons(deserializedOperation.port());
       workerAddr.sin_addr.s_addr = inet_addr(deserializedOperation.ip().c_str());
@@ -135,13 +156,19 @@ int main(int argc, char *argv[])
       task->set_operation_num_one("121234313");
       task->set_operation_num_two("9999");
       task->set_operation_label("/");
+      memset(message,0,BUF_SIZE);
       operation.SerializeToArray(message, BUF_SIZE);
       if (send(sockWorker,message, strlen(message), 0) < 0)
       {
           printf("send msg erroro");
           return 0;
       }
+      memset(message,0,BUF_SIZE);
       ret = recv(sockWorker, message, BUF_SIZE, 0);
+      if(ret==-1){
+        printf("worker似乎下线了，等待超时,重新请求计算\n");
+        continue;
+      }
       deserializedOperation.ParseFromArray(message, BUF_SIZE);
       cout << "计算结果:" << deserializedOperation.DebugString();
       close(sockWorker);

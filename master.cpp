@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
       }
       else if (events[i].events & (EPOLLRDHUP | EPOLLHUP | EPOLLERR))
       {
-        printf("closing fd %d", events[i].data.fd);
+        printf("关闭描述符 fd %d\n", events[i].data.fd);
         if (close(events[i].data.fd) == -1)
           perror("close failure");
       }
@@ -99,6 +99,17 @@ int main(int argc, char *argv[])
           else if (deserializedOperation.operation() == 0)
           {
             printf("master获取到了client请求信息\n");
+            dos::Operation operation;
+            if(socketMap.size()==0){
+              printf("没有worker可以分配\n");
+              operation.set_ip(string(""));
+              operation.set_port(0);
+              operation.set_operation(dos::Operation::DISTRIBUTE);
+              operation.SerializeToArray(message, BUF_SIZE);
+              if (send(events[i].data.fd, message, strlen(message), 0) < 0)
+                printf("send msg erroro\n");
+              continue;
+            }
             int minId = socketMap.begin()->first;
             map<int, tuple<char *, int, int>>::iterator it = socketMap.begin();
             while (it != socketMap.end())
@@ -108,7 +119,6 @@ int main(int argc, char *argv[])
               it++;
             }
             printf("为Client分配的worker信息:描述符为%d,ip为%s, port为%d\n", minId, get<0>(socketMap[minId]), get<1>(socketMap[minId]));
-            dos::Operation operation;
             operation.set_port(get<1>(socketMap[minId]));
             operation.set_ip(get<0>(socketMap[minId]));
             operation.set_operation(dos::Operation::DISTRIBUTE);
